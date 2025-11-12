@@ -3,7 +3,6 @@
     <div class="hero-content">
       <h1>Micro-SaaS</h1>
       <h2>Para tus proyectos</h2>
-      <p>Innovación y sostenibilidad en cada proyecto.</p>
     </div>
   </section>
 </template>
@@ -32,8 +31,8 @@
 .hero-content h2 {
   font-family: 'Marcellus', serif;
   text-align: start;
-  margin-left: 3rem;
-  font-size: 4vw;
+  margin-left: 5rem;
+  font-size: 2vw;
   margin-bottom: 1rem;
 }
 

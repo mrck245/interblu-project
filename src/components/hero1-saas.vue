@@ -2,9 +2,8 @@
   <section id="inicio" class="hero2">
     <div class="hero-content">
       <slot></slot>
-      <h1>Micro-SaaS</h1>
-      <h2>Para tus proyectos</h2>
-      <p>Innovación y sostenibilidad en cada proyecto.</p>
+      <h1>Videojuegos y entretenimiento</h1>
+      <p>Foreign Waltz ya está disponible en todas nuestras tiendas online!</p>
     </div>
   </section>
 </template>
@@ -15,30 +14,34 @@
 .hero2 {
   background: #003249;
   height: 80vh;
-  width: 100vw; /* asegúrate de cubrir toda la ventana */
-  margin: 0;
-  padding: 0;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: right;
+  text-align: center;
   color: white;
-  box-sizing: border-box;
 }
 
 .hero-content {
   font-family: 'Marcellus', serif;
   text-align: end;
-  margin-right: 3rem;
+  margin-right: 2.5rem;
+  font-size: 4vw;
+  margin-bottom: 1rem;
 }
 
 .hero-content h1,
 .hero-content h2 {
-  margin: 0 0 1rem 0;
+  font-family: 'Marcellus', serif;
+  text-align: end;
+  margin-right: 2rem;
   font-size: 4vw;
+  margin-bottom: 1rem;
 }
 
 .hero-content p {
   font-size: 1.6vw;
-  margin: 0;
+  margin-right: 2rem;
+  text-align: end;
 }
 </style>

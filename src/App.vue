@@ -5,7 +5,6 @@
 
 <script setup>
 import AppHeader from './components/AppHeader.vue'
-import RouterView from './views/HomeView.vue'
 </script>
 
 <style>

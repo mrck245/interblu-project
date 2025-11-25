@@ -21,7 +21,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 function goHome() {
-  console.log('ir al Inicio')
+  router.push('/')
 }
 
 function goServices() {
@@ -29,19 +29,19 @@ function goServices() {
 }
 
 function goProducts() {
-  console.log('ir a Productos')
+  router.push('/products')
 }
 
 function goAbout() {
-  console.log('ir a Acerca De')
+  router.push('/about')
 }
 
 function goContacts() {
-  console.log('ir a Contactos')
+  router.push('/contacts')
 }
 
 function goLogin() {
-  console.log('ir a Inicio de Sesión')
+  router.push('/login')
 }
 </script>
 

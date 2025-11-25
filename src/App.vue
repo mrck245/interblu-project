@@ -8,7 +8,7 @@ import AppHeader from './components/AppHeader.vue'
 import RouterView from './views/HomeView.vue'
 </script>
 
-<style scoped>
+<style>
 /* si quieres darle un color base al fondo */
 main {
   background-color: white;
@@ -24,7 +24,8 @@ body {
 }
 
 .hero,
-.hero2 {
+.hero2,
+.footer {
   display: block;
   width: 100vw;
   margin: 0;

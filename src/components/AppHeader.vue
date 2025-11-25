@@ -17,13 +17,15 @@
 
 <script setup>
 import logo from '@/assets/Sources/interblu-logo.png'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
 function goHome() {
   console.log('ir al Inicio')
 }
 
 function goServices() {
-  console.log('ir a servicios')
+  router.push('/services')
 }
 
 function goProducts() {
@@ -52,12 +54,13 @@ function goLogin() {
 }
 
 .encabezado {
-  background-color: #003249;
-  width: 100%;
-  height: 13vh;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 13vh;
+  background: #003249;
+  z-index: 1000; /* el más alto */
 }
 
 .logo {
@@ -67,15 +70,12 @@ function goLogin() {
 }
 
 .navbar {
-  width: 100%;
-  position: fixed;
-  top: 13.8vh; /* justo debajo del header */
+  position: absolute;
+  top: 13vh;
   left: 0;
+  width: 100%;
   height: 3.2vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9;
+  z-index: 999; /* un poco menos que el header */
 }
 
 .navbar ul {

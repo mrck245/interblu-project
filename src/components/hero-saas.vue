@@ -185,8 +185,7 @@ const prevSlide = () => {
   /* Degradado Sutil de Transparente a Blanco si lo necesitas para asegurar la legibilidad del texto aqua */
   background: linear-gradient(
     to right,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.007) 100%
+    #81c4da 20%, #fff 70%
   );
   /* Si prefieres no tener ningún oscurecimiento en la imagen, usa: background: none; */
 }
@@ -241,8 +240,7 @@ const prevSlide = () => {
   height: 100%;
   background: linear-gradient(
     to left,
-    /* El oscurecimiento se mueve a la izquierda */ rgba(255, 255, 255, 0) 10%,
-    /* Transparente en el 50% */ #fff 60% /* Blanco semi-opaco en la izquierda */
+   rgba(255, 255, 255, 0) 10%, #fff 60% 
   );
 }
 </style>

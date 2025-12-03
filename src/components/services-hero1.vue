@@ -62,6 +62,7 @@ const services = [
   box-shadow: 0 0 18px rgba(0,0,0,0.4);
 
   /* 🟦 LO IMPORTANTE: LAYOUT EN FILA */
+  font-family: 'Marcellus', serif;
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -83,6 +84,7 @@ const services = [
   font-family: 'Marcellus', serif;
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .service-card p {

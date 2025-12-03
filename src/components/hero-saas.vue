@@ -1,23 +1,17 @@
 <template>
   <section id="inicio" class="hero-wrapper">
+
+    <!-- Control izquierdo -->
     <div class="sidebar-controls">
       <button @click="prevSlide" class="nav-btn" aria-label="Anterior">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M15 18l-6-6 6-6" />
         </svg>
       </button>
     </div>
 
+    <!-- Zona central -->
     <div class="hero-main-area">
       <div class="carousel-track" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
         <div
@@ -35,30 +29,24 @@
         <h1>Micro-SaaS para tus proyectos</h1>
         <p>
           En interblü desarrollamos Software simple, práctico y eficiente para tus videojuegos,
-          explora nuestros servicios y duplica tu rendimiento
+          explora nuestros servicios y duplica tu rendimiento.
         </p>
       </div>
     </div>
 
+    <!-- Control derecho -->
     <div class="sidebar-controls sidebar-controls-right">
       <button @click="nextSlide" class="nav-btn" aria-label="Siguiente">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M9 18l6-6-6-6" />
         </svg>
       </button>
     </div>
+
   </section>
 </template>
+
 
 <script setup>
 import { ref } from 'vue'

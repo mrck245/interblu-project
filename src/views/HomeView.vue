@@ -42,7 +42,7 @@ import Footer from '@/components/footer-saas.vue'
 }
 .footer {
   background: #00141e;
-  padding-top: 15vh;
+  padding-top: 10vh;
   text-align: center;
   color: white;
 }

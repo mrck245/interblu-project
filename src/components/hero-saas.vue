@@ -230,5 +230,7 @@ const prevSlide = () => {
     to left,
    rgba(255, 255, 255, 0) 10%, #fff 60% 
   );
+
+  
 }
 </style>

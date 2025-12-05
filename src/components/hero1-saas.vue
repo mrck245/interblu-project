@@ -209,5 +209,7 @@ const prevSlide = () => {
 
   /* ✅ CÓDIGO CLAVE: Degradado de transparente a negro (a la derecha) */
   background: linear-gradient(to right, rgba(0, 0, 0, 0) 20%, #003249 70%);
+
+  
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
-  <section class="page-wrapper">
+  <main>
+   <section class="page-wrapper">
     <div class="products-grid">
 
       <div class="products-card" v-for="item in products" :key="item.title">
@@ -11,11 +12,16 @@
       </div>
 
     </div>
-  </section>
+    </section>
+
+
+  <Footer />
+  </main>
 </template>
 
 
 <script setup>
+import Footer from '@/components/footer-saas.vue'
 import vg1 from '@/assets/Sources/pictures/Untitled82_20251124125033.png'
 
 const products = [
@@ -30,9 +36,6 @@ const products = [
 
 <style scoped>
 /* ✨ Evita que el contenido quede detrás del header */
-.page-wrapper {
-  padding-top: 18vh;
-}
 
 /* GRILLA */
 .products-grid {
@@ -84,6 +87,13 @@ const products = [
   font-size: 1.2rem;
   line-height: 1.6;
   max-width: 600px;
+}
+
+.footer {
+    background: #000000;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding-top: 2vh;
 }
 
 /* 🔥 RESPONSIVE */

@@ -47,7 +47,6 @@
 <style scoped>
 /* Contenedor principal del footer */
 .footer {
-  background-color: #001722; /* El color oscuro que tenías */
   color: white;
   width: 100%;
   padding: 0 5% 3rem 5%; /* Padding: Arriba 0, Lados 5%, Abajo 3rem */

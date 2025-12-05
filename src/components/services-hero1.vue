@@ -1,18 +1,22 @@
 <template>
-  <section class="page-wrapper">
-    <div class="services-grid">
+  <main>
+     <section class="page-wrapper">
+      <div class="services-grid">
 
-      <div class="service-card" v-for="item in services" :key="item.title">
-        <img :src="item.img" alt="logo" class="service-img" />
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.text }}</p>
-      </div>
+        <div class="service-card" v-for="item in services" :key="item.title">
+          <img :src="item.img" alt="logo" class="service-img" />
+         <h2>{{ item.title }}</h2>
+         <p>{{ item.text }}</p>
+       </div>
 
-    </div>
-  </section>
+       </div>
+      </section>
+    <Footer />
+  </main>
 </template>
 
 <script setup>
+import Footer from '@/components/footer-saas.vue'
 import ms1 from '@/assets/Sources/pictures/juralogo.png'
 import ms2 from '@/assets/Sources/pictures/sheeptunelogo.png'
 import ms3 from '@/assets/Sources/pictures/asperlogo.png'
@@ -45,10 +49,10 @@ const services = [
 /* GRILLA */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(1fr);
+  grid-template-columns: repeat(1,1fr);
   gap: 3rem;
   padding: 4rem;
-  background: linear-gradient(to bottom, #003249, #000);
+  background: linear-gradient(to bottom, #ffffff, #007EA7);
   min-height: 100vh;
 }
 
@@ -92,6 +96,14 @@ const services = [
   line-height: 1.6;
   max-width: 600px;
 }
+
+.footer {
+  background: #007EA7;
+  padding-top: 10vh;
+  text-align: center;
+  color: white;
+}
+
 @media (max-width: 900px) {
   .service-card {
     flex-direction: column;

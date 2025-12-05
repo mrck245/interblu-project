@@ -18,9 +18,9 @@
 import Footer from '@/components/footer-saas.vue'
 </script>
 
-<style>
+<style scoped>
 .page-wrapper {
-  margin-top: 18vh;
+  margin-top: 17vh;
 }
 
 .about {
@@ -45,6 +45,13 @@ import Footer from '@/components/footer-saas.vue'
     background: #afd8e2;
     text-align: center;
     color: rgb(255, 255, 255);
-    padding-top: 15vh;
+    padding-top: 5vh
 }
+
+@media (max-width: 768px) {
+  .page-wrapper {
+  margin-top: 11vh;
+}
+}
+
 </style>

@@ -1,6 +1,6 @@
 <template>
   <main>
-   <section class="page-wrapper">
+   <section class="about page-wrapper">
     <div class="products-grid">
 
       <div class="products-card" v-for="item in products" :key="item.title">
@@ -35,6 +35,9 @@ const products = [
 
 
 <style scoped>
+.page-wrapper {
+  margin-top: 17vh;
+}
 /* ✨ Evita que el contenido quede detrás del header */
 
 /* GRILLA */
@@ -97,7 +100,12 @@ const products = [
 }
 
 /* 🔥 RESPONSIVE */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+
+  .page-wrapper {
+  margin-top: 17vh;
+}
+
   .products-card {
     flex-direction: column;
     text-align: center;

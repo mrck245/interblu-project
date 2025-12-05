@@ -109,4 +109,19 @@ function goLogin() {
   background-color: #c9eefa;
   color: #013f5c;
 }
+
+@media (max-width: 768px) {
+  .logo {
+    display: block;
+    margin: 0 auto;
+    margin-top: 1.5vh;
+}
+  .navbar {
+    display: none;
+  }
+
+  .encabezado {
+    height: 20vh;
+  }
+}
 </style>

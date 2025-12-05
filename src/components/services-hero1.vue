@@ -41,9 +41,8 @@ const services = [
 </script>
 
 <style scoped>
-/* ✨ Ajuste global para no meter contenido bajo el header */
 .page-wrapper {
-  padding-top: 18vh; /* MISMA ALTURA DEL HEADER */
+  margin-top: 17vh;
 }
 
 /* GRILLA */
@@ -105,6 +104,9 @@ const services = [
 }
 
 @media (max-width: 900px) {
+  .page-wrapper {
+  margin-top: 17vh;
+}
   .service-card {
     flex-direction: column;
     text-align: center;

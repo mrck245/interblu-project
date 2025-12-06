@@ -62,6 +62,7 @@ const products = [
   display: flex;
   align-items: center;
   gap: 2rem;
+  
 
   font-family: 'Marcellus', serif;
 }
@@ -100,7 +101,7 @@ const products = [
 }
 
 /* 🔥 RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
   .page-wrapper {
   margin-top: 17vh;
@@ -113,7 +114,6 @@ const products = [
 
   .products-img {
     margin-bottom: 1rem;
-    width: 200px;
   }
 }
 

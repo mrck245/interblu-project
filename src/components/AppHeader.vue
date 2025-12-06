@@ -1,8 +1,14 @@
 <template>
   <header class="encabezado">
     <img :src="logo" alt="Interblü logo" class="logo" />
-    <p style="color: white; text-align: center; padding-top: 10px"></p>
-    <nav class="navbar">
+
+    <!-- Botón hamburguesa -->
+    <button class="hamburger" @click="isOpen = !isOpen">
+      ☰
+    </button>
+
+    <!-- NAV normal + responsive -->
+    <nav :class="['navbar', { active: isOpen }]">
       <ul>
         <li><button @click="goHome">Inicio</button></li>
         <li><button @click="goServices">Servicios</button></li>
@@ -15,35 +21,46 @@
   </header>
 </template>
 
+
 <script setup>
+import { ref } from 'vue'
 import logo from '@/assets/Sources/interblu-logo.png'
 import { useRouter } from 'vue-router'
+
 const router = useRouter()
+const isOpen = ref(false)
 
 function goHome() {
   router.push('/')
+  isOpen.value = false
 }
 
 function goServices() {
   router.push('/services')
+  isOpen.value = false
 }
 
 function goProducts() {
   router.push('/products')
+  isOpen.value = false
 }
 
 function goAbout() {
   router.push('/about')
+  isOpen.value = false
 }
 
 function goContacts() {
   router.push('/contacts')
+  isOpen.value = false
 }
 
 function goLogin() {
   router.push('/login')
+  isOpen.value = false
 }
 </script>
+
 
 <style scoped>
 @font-face {
@@ -60,7 +77,10 @@ function goLogin() {
   width: 100%;
   height: 13vh;
   background: #003249;
-  z-index: 1000; /* el más alto */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 2vh;
 }
 
 .logo {
@@ -74,14 +94,12 @@ function goLogin() {
   top: 13vh;
   left: 0;
   width: 100%;
-  height: 3.2vh;
-  z-index: 999; /* un poco menos que el header */
+  z-index: 999;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -93,16 +111,13 @@ function goLogin() {
 .navbar button {
   font-family: 'Marcellus', serif;
   font-size: 2.2vh;
-  text-align: center;
   width: 100%;
   height: 5vh;
   background-color: #81c4da;
-  color: 003249;
+  color: #003249;
   border: none;
-  padding: 8px 14px;
-  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .navbar button:hover {
@@ -110,18 +125,76 @@ function goLogin() {
   color: #013f5c;
 }
 
-@media (max-width: 768px) {
+.hamburger {
+  display: none;
+  font-size: 4vh;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+@media (max-width: 912px) {
   .logo {
     display: block;
     margin: 0 auto;
+    margin-left: 21vw;
     margin-top: 1.5vh;
 }
-  .navbar {
-    display: none;
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 6vh;
+    top: 3vh;
   }
 
+  .navbar {
+    display: none;
+    position: absolute;
+    top: 13vh;
+    left: 0;
+    width: 100%;
+    background: #003f5c;
+    padding: 2vh 0;
+  }
+
+   .navbar.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* ← Centra horizontalmente */
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Vertical */
+  .navbar ul {
+    display:list-item;
+    flex-direction: column;
+    align-items: stretch;      /* ← Centrar botones */
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar button {
+   width: 100%;
+   height: 12vh;
+    font-size: 3vh;
+    border-radius: 0; /* opcional: hace que parezcan menú real */
+  }
+
+  .navbar button:hover {
+     background-color: #c9eefa;
+      color: #013f5c;
+  }
+
+  /* Header más alto por mobile */
   .encabezado {
     height: 20vh;
   }
-}
+  }
+
 </style>

@@ -117,4 +117,10 @@ const products = [
   }
 }
 
+@media (min-width: 913px) and (max-width: 1024px) {
+.page-wrapper{
+    margin-top: 23vh; /* <-- ¡ESTE ES EL MARGEN CLAVE! */
+  }
+}
+
 </style>

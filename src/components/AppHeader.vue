@@ -71,6 +71,7 @@ function goLogin() {
 }
 
 .encabezado {
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
@@ -80,13 +81,13 @@ function goLogin() {
   z-index: 1000;
   display: flex;
   align-items: center;
-  padding: 0 2vh;
+  padding: 0 0.4vh;
 }
 
 .logo {
   height: 80%; /* Ajusta según el tamaño que quieras */
-  margin-left: 3vh;
-  margin-top: 1vh;
+  margin-top: 0vh;
+  margin-left: 4vh;
 }
 
 .navbar {
@@ -127,7 +128,7 @@ function goLogin() {
 
 .hamburger {
   display: none;
-  font-size: 4vh;
+  font-size: 3vh;
   background: none;
   border: none;
   color: white;
@@ -136,24 +137,32 @@ function goLogin() {
 }
 
 @media (max-width: 912px) {
+
+  .encabezado {
+    height: 20vh;
+    display: flex; 
+    flex-direction: column; /* Apila logo y nav (aunque nav está oculto) */
+    align-items: center;    /* Centra el logo horizontalmente */
+    justify-content: center; /* Centra el logo verticalmente */
+  }
+
   .logo {
-    display: block;
-    margin: 0 auto;
-    margin-left: 21vw;
-    margin-top: 1.5vh;
-}
+    height: 70%;
+    margin-top: 0vh;
+    margin-left: 0vh;
+  }
   .hamburger {
     display: block;
     position: absolute;
-    right: 6vh;
-    top: 3vh;
+    right: 2vh;
+    top: 1vh;
   }
 
   .navbar {
     display: none;
-    position: absolute;
-    top: 13vh;
-    left: 0;
+    position:fixed;
+    top: 10vh;
+    left: 3vh;
     width: 100%;
     background: #003f5c;
     padding: 2vh 0;
@@ -195,6 +204,66 @@ function goLogin() {
   .encabezado {
     height: 20vh;
   }
+}
+
+@media (min-width: 913px) and (max-width: 1024px) {
+  .logo {
+    display: block;    /* ← agregar */
+    height: 65%;
+    margin-top: 0vh;
+    margin-left: 3vh;
+}
+  
+.navbar {
+    /* 🛑 CAMBIO CLAVE: Quita la posición absoluta y el 'top' que lo desplaza */
+    position: relative; /* O relative, para que siga el flujo */
+    top: initial;
+    left: initial;
+    width: 100%;
+    /* ... */
   }
+
+
+
+  .navbar ul {
+    /* Mantiene los botones horizontales pero se asegura de que el padre sea ancho */
+    justify-content: center; 
+  }
+
+
+  .navbar button {
+
+   width: 100%;
+   height: 5vh;
+    font-size: 1.6vh;
+    font-display:fallback;
+  }
+
+  .navbar button:hover {
+     background-color: #c9eefa;
+      color: #013f5c;
+  }
+
+  /* Header más alto por mobile */
+  .encabezado {
+    height: 20vh; /* Se mantiene alto */
+    flex-direction: column; /* Apila logo y nav */
+    justify-content:center; /* Centra el bloque apilado */
+  }
+
+.hero-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  background: #003249;
+  overflow: hidden;
+  margin-top: 90px;
+  height: calc(100vh - 80px);
+}
+
+
+}
+
 
 </style>

@@ -5,19 +5,19 @@
     <div class="footer-content">
       <div class="footer-left">
         <div class="social-icons">
-          <a href="https://instagram.com/" target="_blank">
+          <a href="https://instagram.com/montm24" target="_blank">
             <img src="@/assets/Sources/instagram_white 1.png" alt="Instagram" />
           </a>
 
-          <a href="https://x.com/" target="_blank">
+          <a href="https://x.com/mrck245" target="_blank">
             <img src="@/assets/Sources/X_logo_2023_(white).png" alt="X Twitter" />
           </a>
 
-          <a href="https://github.com/tu-usuario" target="_blank">
+          <a href="https://github.com/mrck245" target="_blank">
             <img src="@/assets/Sources/git_hub_white.png" alt="GitHub" />
           </a>
 
-          <a href="https://youtube.com/" target="_blank">
+          <a href="https://youtube.com/@mrck224" target="_blank">
             <img src="@/assets/Sources/youtube_white.png" alt="YouTube" />
           </a>
 

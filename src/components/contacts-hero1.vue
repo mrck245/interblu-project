@@ -19,4 +19,11 @@
   font-size: 3vh;
   color: #003249;
 }
+
+@media (min-width: 913px) and (max-width: 1024px) {
+.contacts-hero1{
+    margin-top: 20vh; /* <-- ¡ESTE ES EL MARGEN CLAVE! */
+  }
+}
+
 </style>

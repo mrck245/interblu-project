@@ -54,4 +54,10 @@ import Footer from '@/components/footer-saas.vue'
 }
 }
 
+@media (min-width: 913px) and (max-width: 1024px) {
+.page-wrapper{
+    margin-top: 20vh; /* <-- ¡ESTE ES EL MARGEN CLAVE! */
+  }
+}
+
 </style>

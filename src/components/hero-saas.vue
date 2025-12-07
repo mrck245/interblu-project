@@ -230,7 +230,13 @@ const prevSlide = () => {
     to left,
    rgba(255, 255, 255, 0) 10%, #fff 60% 
   );
+}
 
+    @media (min-width: 913px) and (max-width: 1024px) {
+      .hero-wrapper {
+      margin-top: 25vh; /* <-- ¡ESTE ES EL MARGEN CLAVE! */
+  }
   
 }
+
 </style>

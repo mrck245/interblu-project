@@ -5,7 +5,8 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+</script>
 
 <style scoped>
 .login-hero1 {
@@ -18,5 +19,11 @@
   justify-content: center;
   font-size: 3vh;
   color: #003249;
+}
+
+@media (min-width: 913px) and (max-width: 1024px) {
+.login-hero1{
+    margin-top: 20vh; /* <-- ¡ESTE ES EL MARGEN CLAVE! */
+  }
 }
 </style>

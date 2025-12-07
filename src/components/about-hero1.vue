@@ -43,12 +43,18 @@ import Footer from '@/components/footer-saas.vue'
 
 .footer {
     background: #afd8e2;
-    text-align: center;
+    text-align:center;
     color: rgb(255, 255, 255);
-    padding-top: 5vh
+    padding-top: 5v h
 }
 
-@media (max-width: 768px) {
+@media (max-width: 912px) {
+
+  .about {
+  font-size: 1.2rem;
+}
+
+
   .page-wrapper {
   margin-top: 11vh;
 }

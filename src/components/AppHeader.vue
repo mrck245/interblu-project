@@ -138,72 +138,125 @@ function goLogin() {
 
 @media (max-width: 912px) {
 
+
+
   .encabezado {
+
     height: 20vh;
-    display: flex; 
+
+    display: flex;
+
     flex-direction: column; /* Apila logo y nav (aunque nav está oculto) */
+
     align-items: center;    /* Centra el logo horizontalmente */
+
     justify-content: center; /* Centra el logo verticalmente */
+
   }
+
+
 
   .logo {
+
     height: 70%;
+
     margin-top: 0vh;
+
     margin-left: 0vh;
+
   }
+
   .hamburger {
+
     display: block;
+
     position: absolute;
+
     right: 2vh;
+
     top: 1vh;
+
   }
 
-  .navbar {
-    display: none;
-    position:fixed;
-    top: 10vh;
-    left: 3vh;
-    width: 100%;
-    background: #003f5c;
-    padding: 2vh 0;
-  }
 
-   .navbar.active {
-    display: flex;
-    flex-direction: column;
-    align-items: center;      /* ← Centra horizontalmente */
-    justify-content: flex-start;
-    width: 100%;
-    padding: 0;
-  }
+
+.navbar {
+  position: fixed;
+  top: 20vh;
+  left: 0;
+  width: 100%;
+  background: #003f5c;
+  opacity: 0;
+  transform: translateY(-20px); /* se esconde hacia arriba */
+  pointer-events: none;        /* impide clics mientras está oculto */
+  transition: opacity 0.1s ease, transform 0.1s ease;
+  padding: 0;
+}
+
+
+
+.navbar.active {
+  opacity: 1;
+  transform: translateY(0);   /* baja suavemente */
+  pointer-events: auto;
+}
+
+
 
   /* Vertical */
+
   .navbar ul {
+
     display:list-item;
+
     flex-direction: column;
+
     align-items: stretch;      /* ← Centrar botones */
+
     justify-content: center;
+
     width: 100%;
+
     padding: 0;
+
     margin: 0;
+
   }
+
+
 
   .navbar button {
+
    width: 100%;
+
    height: 12vh;
+
     font-size: 3vh;
-    border-radius: 0; /* opcional: hace que parezcan menú real */
+
+    border-radius: 0px; /* opcional: hace que parezcan menú real */
+
   }
+
+
 
   .navbar button:hover {
+
      background-color: #c9eefa;
+
       color: #013f5c;
+
   }
 
+
+
   /* Header más alto por mobile */
+
   .encabezado {
+
     height: 20vh;
+
   }
+
 }
 
 @media (min-width: 913px) and (max-width: 1024px) {

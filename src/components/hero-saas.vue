@@ -287,7 +287,7 @@ onUnmounted(() => {
   /* ÁREA PRINCIPAL (CARRUSEL) */
   .hero-main-area {
     width: 100%;
-    height: vh;
+    height: 80vh;
     position: relative;
     display: flex;
     justify-content: center;
@@ -306,7 +306,6 @@ onUnmounted(() => {
     background-position: center !important;
   }
 
-  /* OVERLAY ADAPTADO A MOBIL */
   .overlay {
     background: linear-gradient(
       to bottom,
@@ -332,7 +331,8 @@ onUnmounted(() => {
     font-size: 5vh;
     margin: 0 0 1rem 0;
     text-align: center;
-    text-shadow: #fff 0px 0px 10px ;
+    justify-content: center;
+    text-shadow: #ffffff 0px 0px 20px ;
   }
 
   .hero-content p {
@@ -340,7 +340,7 @@ onUnmounted(() => {
     text-align: center;
     margin: 0 auto;
     max-width: 90%;
-     text-shadow: #fff 0px 00px 10px;
+     text-shadow: #ffffff 0px 00px 20px;
   }
 }
 

@@ -97,7 +97,7 @@ onUnmounted(() => {
 </script>
 
 
-<style>
+<style scoped>
 .header-navbar {
   position: fixed;
   top: 0;
@@ -187,18 +187,17 @@ onUnmounted(() => {
   position: relative;
   z-index: 10;
   color: white;
-
   font-family: 'Marcellus', serif;
   text-align: end;
   margin-right: 2.5rem;
   font-size: 4vw;
   margin-bottom: 1rem;
   max-width: 40%;
-  text-shadow: 0 0 50px black;
+  text-shadow: black 0px 0px 30px;
 }
-
-.hero-content h1,
-.hero-content h2 {
+  
+:deep(.hero-content h1),
+:deep(.hero-content h2) {
   font-family: 'Marcellus', serif;
   text-align: end;
   margin-right: 2rem;
@@ -206,10 +205,9 @@ onUnmounted(() => {
   margin-bottom: 1rem;
 }
 
-.hero-content p {
+:deep(.hero-content p) {
   font-size: 1.6vw;
-  margin-right: 2rem;
-  text-align: end;
+  text-align: center;
 }
 
 .overlay {
@@ -245,7 +243,7 @@ onUnmounted(() => {
   .hero-main-area {
     position: relative;
     width: 100%;
-    height: 60vh; 
+    height: 80vh; 
     justify-content: center;
     align-items: center;
   }
@@ -278,18 +276,17 @@ onUnmounted(() => {
     text-align: center;
     margin: 0;
     max-width: 90%;
-    text-shadow: none;
+    
   }
 
   .hero-content h1 {
     font-size: 4.5vh;
     margin-bottom: 1rem;
-    text-shadow: black 0px 0px 60px;
   }
 
   .hero-content p {
     font-size: 2.4vh;
-    text-shadow: black 0px 0px 60px;
+
   }
 }
 </style>

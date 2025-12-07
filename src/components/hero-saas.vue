@@ -49,9 +49,7 @@
 
 
 <script setup>
-import { ref } from 'vue'
-
-// Asegúrate de que estas rutas de importación sean correctas en tu proyecto
+import { ref, onMounted, onUnmounted } from 'vue'
 import ms1 from '@/assets/Sources/pictures/sheeptunelogo.png'
 import ms2 from '@/assets/Sources/pictures/asperlogo.png'
 import ms3 from '@/assets/Sources/pictures/juralogo.png'
@@ -59,14 +57,44 @@ import ms3 from '@/assets/Sources/pictures/juralogo.png'
 const currentIndex = ref(0)
 const images = [ms1, ms2, ms3]
 
+// Declarar intervalo
+let interval = null
+
+// Avanza hacia la derecha
 const nextSlide = () => {
-  currentIndex.value = currentIndex.value < images.length - 1 ? currentIndex.value + 1 : 0
+  currentIndex.value =
+    currentIndex.value < images.length - 1
+      ? currentIndex.value + 1
+      : 0
 }
 
+// Avanza hacia la izquierda
 const prevSlide = () => {
-  currentIndex.value = currentIndex.value > 0 ? currentIndex.value - 1 : images.length - 1
+  currentIndex.value =
+    currentIndex.value > 0
+      ? currentIndex.value - 1
+      : images.length - 1
 }
+
+// AUTOPLAY — aquí decides el sentido:
+//  👉 nextSlide() = se mueve a la derecha
+//  👉 prevSlide() = se mueve a la izquierda
+const startInterval = () => {
+  if (interval) clearInterval(interval)
+  interval = setInterval(() => {
+    // Cambia aquí para invertir la dirección
+    prevSlide()   // ← autoplay hacia la izquierda
+    // nextSlide() // ← autoplay hacia la derecha
+  }, 3000)
+}
+
+onMounted(() => startInterval())
+
+onUnmounted(() => {
+  if (interval) clearInterval(interval)
+})
 </script>
+
 
 <style scoped>
 /* NOTA: Esta clase (.header-navbar) debe estar en el CSS de tu Header. */
@@ -237,6 +265,83 @@ const prevSlide = () => {
       margin-top: 25vh; /* <-- ¡ESTE ES EL MARGEN CLAVE! */
   }
   
+}
+
+@media (max-width: 912px) {
+
+  /* CONTENEDOR GENERAL */
+  .hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: -2vh; /* por el header móvil */
+    width: 100%;
+    height: auto; /* que crezca según contenido */
+    overflow: hidden;
+  }
+
+  /* OCULTAR BARRAS LATERALES */
+  .sidebar-controls {
+    display: none !important;
+  }
+
+  /* ÁREA PRINCIPAL (CARRUSEL) */
+  .hero-main-area {
+    width: 100%;
+    height: vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-track {
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  /* OVERLAY ADAPTADO A MOBIL */
+  .overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.1) 40%,
+      rgba(0,0,0,0.7) 100%
+    ) !important;
+  }
+
+  /* TEXTO CENTRADO */
+  .hero-content {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 90%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-content h1 {
+    font-size: 5vh;
+    margin: 0 0 1rem 0;
+    text-align: center;
+    text-shadow: #fff 0px 0px 10px ;
+  }
+
+  .hero-content p {
+    font-size: 2.4vh;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 90%;
+     text-shadow: #fff 0px 00px 10px;
+  }
 }
 
 </style>

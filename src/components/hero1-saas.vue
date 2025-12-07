@@ -62,19 +62,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
-// 🛑 CORRECCIÓN: IMPORTA las imágenes una por una
+// importa tus imágenes
 import vg1 from '@/assets/Sources/pictures/Untitled82_20251124125033.png'
 import vg2 from '@/assets/Sources/pictures/Untitled82_20251124125140.png'
 import vg3 from '@/assets/Sources/pictures/Untitled82_20251124125351.png'
 
 const currentIndex = ref(0)
-const images = [
-  vg1, // Usa las variables importadas aquí
-  vg2,
-  vg3,
-]
+const images = [vg1, vg2, vg3]
+
+// <-- DECLARA interval AQUÍ
+let interval = null
 
 const nextSlide = () => {
   currentIndex.value = currentIndex.value < images.length - 1 ? currentIndex.value + 1 : 0
@@ -83,7 +82,20 @@ const nextSlide = () => {
 const prevSlide = () => {
   currentIndex.value = currentIndex.value > 0 ? currentIndex.value - 1 : images.length - 1
 }
+
+// auto-slide cada 4 segundos
+onMounted(() => {
+  interval = setInterval(() => {
+    nextSlide()
+  }, 4000)
+})
+
+// limpiar al desmontar
+onUnmounted(() => {
+  if (interval) clearInterval(interval)
+})
 </script>
+
 
 <style>
 .header-navbar {
@@ -212,5 +224,72 @@ const prevSlide = () => {
 
   
   
+}
+
+@media (max-width: 912px) {
+
+  /* CONTENEDOR GLOBAL */
+  .hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20vh; /* por tu header móvil */
+    height: auto; /* el contenido define la altura */
+  }
+
+  /* OCULTAR BARRAS */
+  .sidebar-controls {
+    display: none;
+  }
+
+  /* CARRUSEL */
+  .hero-main-area {
+    position: relative;
+    width: 100%;
+    height: 60vh; 
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-track {
+    height: 100%;
+  }
+
+  .carousel-slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* OVERLAY ADAPTADO */
+  .overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.15) 40%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+
+  /* TEXTO CENTRADO */
+  .hero-content {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin: 0;
+    max-width: 90%;
+    text-shadow: none;
+  }
+
+  .hero-content h1 {
+    font-size: 4.5vh;
+    margin-bottom: 1rem;
+    text-shadow: black 0px 0px 60px;
+  }
+
+  .hero-content p {
+    font-size: 2.4vh;
+    text-shadow: black 0px 0px 60px;
+  }
 }
 </style>

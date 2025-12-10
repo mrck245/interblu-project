@@ -282,6 +282,7 @@ onUnmounted(() => {
   .hero-content h1 {
     font-size: 4.5vh;
     margin-bottom: 1rem;
+    text-align: center;
   }
 
   .hero-content p {

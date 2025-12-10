@@ -45,7 +45,9 @@ import Footer from '@/components/footer-saas.vue'
     background: #afd8e2;
     text-align:center;
     color: rgb(255, 255, 255);
-    padding-top: 5v h
+    padding-top: 5vh;
+    text-shadow: #0032496c 0.1em 0.1em 0.2em;
+    box-shadow: #003249;
 }
 
 @media (max-width: 912px) {

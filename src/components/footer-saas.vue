@@ -31,9 +31,11 @@
 
       <div class="footer-right">
         <img
-          src="@/assets/Sources/white-favicom-interblu 1.png"
-          alt="Interblü Logo"
-          class="logo-flower"
+           src="@/assets/Sources/white-favicom-interblu 1.png"
+            alt="Interblü Logo"
+            class="logo-flower"
+           :class="{ disabled: $route.path === '/' }"
+         @click="goHome"
         />
       </div>
     </div>
@@ -41,7 +43,16 @@
 </template>
 
 <script setup>
-// No se necesita lógica adicional por ahora
+import { useRouter, useRoute } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
+
+function goHome() {
+  if (route.path !== '/') {
+    router.push('/')
+  }
+}
 </script>
 
 <style scoped>
@@ -112,9 +123,25 @@
 
 /* --- ESTILOS DERECHA (Logo Flor) --- */
 .logo-flower {
-  height: 80px; /* Ajusta este tamaño según qué tan grande quieres la flor */
+  height: 80px;
   width: auto;
   object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.logo-flower:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+.logo-flower.disabled {
+  cursor: default;
+}
+
+/* Evita hover cuando está desactivado */
+.logo-flower.disabled:hover {
+  transform: none;
 }
 
 /* --- RESPONSIVE (Móvil) --- */

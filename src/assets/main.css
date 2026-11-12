@@ -85,7 +85,7 @@
   --radius: 14px;
   --container: 1120px;
   --gutter: clamp(16px, 4vw, 32px);
-  --header-h: 96px;
+  --header-h: 108px;
 
   /* Movimiento: una sola escala para todas las transiciones */
   --dur-fast: 150ms;
@@ -185,7 +185,7 @@ a {
 /* En móvil la cabecera es más baja (el logo baja a 64px) */
 @media (max-width: 980px) {
   :root {
-    --header-h: 68px;
+    --header-h: 76px;
   }
 }
 

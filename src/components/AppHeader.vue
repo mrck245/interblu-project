@@ -98,7 +98,7 @@ function closeMenu() {
 }
 
 .header__logo {
-  height: 80px;
+  height: 92px;
 }
 
 .nav {
@@ -118,12 +118,12 @@ function closeMenu() {
 }
 
 .nav__link {
-  padding: 0.5rem 0.9rem;
+  padding: 0.55rem 1.05rem;
   border-radius: 999px;
   color: var(--text);
   text-decoration: none;
   font-family: var(--font-display);
-  font-size: var(--fs-body);
+  font-size: clamp(1.0625rem, 0.95rem + 0.3vw, 1.2rem); /* 17 → 19px */
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -152,7 +152,7 @@ function closeMenu() {
   cursor: pointer;
 }
 .bar {
-  width: 24px;
+  width: 26px;
   height: 2px;
   background: var(--text);
   border-radius: 2px;
@@ -170,7 +170,7 @@ function closeMenu() {
    el menú se pliega antes de que falte espacio. */
 @media (max-width: 980px) {
   .header__logo {
-    height: 52px;
+    height: 60px;
   }
   .header__lang {
     display: none;

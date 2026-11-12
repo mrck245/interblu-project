@@ -168,7 +168,7 @@ onBeforeUnmount(() => document.removeEventListener('click', onDocumentClick))
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  min-height: 44px;
+  min-height: 46px;
   padding-block: 0.4rem;
   padding-inline: 12px 14px;
   border: 1px solid var(--border-strong);
@@ -176,7 +176,7 @@ onBeforeUnmount(() => document.removeEventListener('click', onDocumentClick))
   background: transparent;
   color: var(--text);
   font: inherit;
-  font-size: var(--fs-small);
+  font-size: var(--fs-body);
   cursor: pointer;
   transition: background-color var(--dur) var(--ease-out);
 }

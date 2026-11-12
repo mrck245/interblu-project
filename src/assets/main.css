@@ -46,6 +46,19 @@
   --tone-projects-card: #055877; /*   tarjetas de esa sección · texto blanco 85 % 6.18:1 */
   --tone-projects-card-hover: #045574;
 
+  /* ============================================================
+     TEMAS DE JUEGOS: cada juego puede tener la estética de su propio arte.
+     Se activa con `theme` en src/data/games.js (clase .theme-<nombre>).
+     ============================================================ */
+  --tulips-purple: #9878f8; /* morado del logo de TULIPS · sobre negro 6.3:1 */
+  --tulips-black: #000000;
+  --tulips-surface: #141414; /* tarjetas dentro del tema */
+  --tulips-surface-hover: #1f1f1f;
+
+  /* Efecto "foco" del inicio */
+  --dur-spotlight: 700ms;
+  --spotlight-dim: rgb(0 20 30 / 0.62); /* sombra sobre las secciones de alrededor (0 = nada, 1 = negro) */
+
   --font-display: 'Marcellus', Georgia, serif;
   /* Escala tipográfica (única para todo el sitio). Los tamaños crecen de forma fluida
      entre móvil (~375px) y escritorio (~1366px). Valores aproximados móvil → escritorio: */
@@ -265,6 +278,110 @@ a {
 /* Si dos secciones contiguas comparten tono, una línea fina las separa */
 .tone-featured + .tone-updates {
   border-top: 1px solid var(--border);
+}
+
+/* ---------- Efecto "foco" (inicio) ----------
+   Registrar los tokens de color permite que el navegador ANIME su cambio:
+   así la sección pasa del tono normal al tema del juego de forma suave. */
+@property --text {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ffffff;
+}
+@property --heading {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ffffff;
+}
+@property --text-muted {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ffffff;
+}
+@property --border {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --border-strong {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --surface {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+
+.spotlight {
+  transition:
+    background-color var(--dur-spotlight) ease,
+    color var(--dur-spotlight) ease,
+    --text var(--dur-spotlight) ease,
+    --heading var(--dur-spotlight) ease,
+    --text-muted var(--dur-spotlight) ease,
+    --border var(--dur-spotlight) ease,
+    --border-strong var(--dur-spotlight) ease,
+    --surface var(--dur-spotlight) ease;
+}
+.spotlight .badge,
+.spotlight .btn {
+  transition:
+    background-color var(--dur-spotlight) ease,
+    color var(--dur-spotlight) ease,
+    border-color var(--dur-spotlight) ease,
+    transform var(--dur) var(--ease-out);
+}
+
+/* Secciones que se oscurecen mientras otra está en foco */
+.dimmable {
+  position: relative;
+}
+.dimmable::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--spotlight-dim);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-spotlight) ease;
+}
+.dimmable.is-dimmed::after {
+  opacity: 1;
+}
+
+/* Tema TULIPS: imita la pantalla de título del juego.
+   Fondo negro, texto blanco, títulos y hover en morado.
+   En hover el texto pasa a NEGRO sobre morado (blanco sobre morado no llega a 4.5:1). */
+.theme-tulips {
+  background: var(--tulips-black);
+  color: var(--white);
+  --text: var(--white);
+  --heading: var(--tulips-purple);
+  --text-muted: rgb(255 255 255 / 0.8);
+  --surface: var(--tulips-surface);
+  --surface-hover: var(--tulips-surface-hover);
+  --border: rgb(255 255 255 / 0.18);
+  --border-strong: var(--tulips-purple);
+  --focus: var(--tulips-purple);
+}
+.theme-tulips .badge {
+  background: var(--tulips-purple);
+  color: var(--tulips-black);
+}
+.theme-tulips a:hover {
+  color: var(--tulips-purple);
+}
+.theme-tulips .btn,
+.theme-tulips .btn--ghost {
+  border-color: var(--white);
+}
+.theme-tulips .btn:hover,
+.theme-tulips .btn--ghost:hover {
+  background: var(--tulips-purple);
+  border-color: var(--tulips-purple);
+  color: var(--tulips-black);
 }
 
 .eyebrow {

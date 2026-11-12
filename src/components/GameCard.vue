@@ -10,7 +10,11 @@ defineProps({
 </script>
 
 <template>
-  <RouterLink :to="localePath(`/juegos/${game.slug}`)" class="game-card">
+  <RouterLink
+    :to="localePath(`/juegos/${game.slug}`)"
+    class="game-card"
+    :class="game.theme && `theme-${game.theme}`"
+  >
     <div class="game-card__media">
       <img :src="game.cover" :alt="game.title" loading="lazy" width="1920" height="1080" />
     </div>
@@ -39,6 +43,10 @@ defineProps({
 .game-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 32px rgb(0 20 30 / 0.3);
+}
+/* Con tema propio, el borde se ilumina con el color del tema al pasar el ratón */
+.game-card:hover {
+  border-color: var(--border-strong);
 }
 
 .game-card__media {

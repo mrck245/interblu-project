@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import GameCard from '@/components/GameCard.vue'
 import PostCard from '@/components/PostCard.vue'
 import { games, featuredGame, localizeGame } from '@/data/games'
@@ -11,10 +11,26 @@ const latestPosts = computed(() => posts.value.slice(0, 3))
 const otherGames = computed(() =>
   games.filter((g) => g.slug !== featuredGame.slug).map(localizeGame),
 )
+
+// Efecto "foco": cuando la sección del juego destacado cruza el centro de la pantalla,
+// adopta el tema del juego (p. ej. TULIPS en negro y morado) y las demás secciones se
+// oscurecen un poco. Fuera del centro se ve con el tono normal del inicio.
+// El observador solo avisa al cruzar la línea central (sin cálculos en cada scroll).
+const featuredSection = ref(null)
+const spotlit = ref(false)
+let observer = null
+onMounted(() => {
+  if (!featuredGame.theme || !featuredSection.value) return
+  observer = new IntersectionObserver(([entry]) => (spotlit.value = entry.isIntersecting), {
+    rootMargin: '-50% 0px -50% 0px', // una línea en el centro vertical de la pantalla
+  })
+  observer.observe(featuredSection.value)
+})
+onBeforeUnmount(() => observer?.disconnect())
 </script>
 
 <template>
-  <section class="hero">
+  <section class="hero dimmable" :class="{ 'is-dimmed': spotlit }">
     <div class="container">
       <p class="eyebrow">{{ t('home.eyebrow') }}</p>
       <h1>{{ t('home.title') }}</h1>
@@ -28,7 +44,12 @@ const otherGames = computed(() =>
     </div>
   </section>
 
-  <section class="section tone-featured">
+  <!-- Tono normal del inicio; al quedar en el centro de la pantalla adopta el tema del juego -->
+  <section
+    ref="featuredSection"
+    class="section tone-featured spotlight"
+    :class="spotlit && featured.theme && `theme-${featured.theme}`"
+  >
     <div class="container featured">
       <div class="featured__media">
         <img
@@ -55,7 +76,11 @@ const otherGames = computed(() =>
     </div>
   </section>
 
-  <section v-if="latestPosts.length" class="section tone-updates">
+  <section
+    v-if="latestPosts.length"
+    class="section tone-updates dimmable"
+    :class="{ 'is-dimmed': spotlit }"
+  >
     <div class="container">
       <div class="section-head">
         <div>
@@ -72,7 +97,11 @@ const otherGames = computed(() =>
     </div>
   </section>
 
-  <section v-if="otherGames.length" class="section tone-projects">
+  <section
+    v-if="otherGames.length"
+    class="section tone-projects dimmable"
+    :class="{ 'is-dimmed': spotlit }"
+  >
     <div class="container">
       <p class="eyebrow">{{ t('home.catalogEyebrow') }}</p>
       <h2>{{ t('home.otherTitle') }}</h2>

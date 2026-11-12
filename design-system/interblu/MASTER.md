@@ -110,9 +110,11 @@ El resto de páginas siguen con un único fondo turquesa.
 - Fechas con `Intl.DateTimeFormat` del idioma activo (`formatDate` en `src/i18n`).
 - El tono profesional/servicial aplica a todos los idiomas (trato formal: usted, vous, Sie, です/ます, 합니다, 您, आप).
 
-## Pendiente (próximas entregas)
+## Temas de juegos
 
-- **Sección de TULIPS con la estética del juego** (pedido del usuario, 2026-11-12): en el inicio y en su ficha de juego, fondo negro, texto blanco, y título y hover en morado (el morado del logo de TULIPS), imitando la pantalla de título del juego.
+Cada juego puede tener una estética propia basada en su arte. Se activa con `theme` en `src/data/games.js` (clase `.theme-<nombre>` en `src/assets/main.css`) y se aplica a su sección destacada del inicio, su tarjeta del catálogo y su ficha.
+
+- **TULIPS** (`theme-tulips`): imita la pantalla de título del juego. Fondo negro, texto blanco, títulos y hover en el morado del logo `#9878f8` (6.3:1 sobre negro). En hover el texto va en **negro sobre morado**: blanco sobre morado solo da 3.3:1.
 
 ## Tono de los textos
 

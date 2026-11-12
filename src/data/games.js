@@ -20,6 +20,8 @@ export const games = [
     title: 'TULIPS',
     tagline: 'Dedicated to you..!', // texto del propio juego: no se traduce
     status: 'inDevelopment', // clave de common.statuses
+    // Tema visual propio (clase .theme-<nombre> en src/assets/main.css). Opcional.
+    theme: 'tulips',
     featured: true,
     cover: tulipsMeadow,
     screenshots: [tulipsTitle, tulipsMeadow, tulipsPale],

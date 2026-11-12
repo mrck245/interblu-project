@@ -19,7 +19,7 @@ watchEffect(() => {
 <template>
   <NotFoundView v-if="!game" />
 
-  <article v-else>
+  <article v-else class="game-page" :class="game.theme && `theme-${game.theme}`">
     <header class="container page-header">
       <RouterLink :to="localePath('/juegos')" class="back"
         ><span class="arrow" aria-hidden="true">←</span> {{ t('game.back') }}</RouterLink
@@ -92,6 +92,10 @@ watchEffect(() => {
 </template>
 
 <style scoped>
+/* La ficha ocupa todo el alto disponible (para que el fondo del tema llegue al footer) */
+.game-page {
+  flex: 1;
+}
 .page-header h1 {
   font-size: var(--fs-display);
   margin: 1rem 0 0.25rem;

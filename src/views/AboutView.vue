@@ -31,7 +31,7 @@ const team = [
 <style scoped>
 .about {
   max-width: 68ch;
-  font-size: 1.1rem;
+  font-size: var(--fs-lead);
   padding-bottom: 96px;
 }
 .about h2 {
@@ -56,7 +56,7 @@ const team = [
 }
 .team strong {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: var(--fs-h3);
   font-weight: 400;
   color: var(--heading);
 }

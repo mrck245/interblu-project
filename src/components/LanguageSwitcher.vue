@@ -4,6 +4,11 @@
 import { useRoute, useRouter } from 'vue-router'
 import { LOCALES, locale, localePath, stripLocale, t } from '@/i18n'
 
+// Puede haber dos selectores (cabecera y menú móvil): cada uno necesita su propio id
+const props = defineProps({
+  id: { type: String, default: 'lang-select' },
+})
+
 const route = useRoute()
 const router = useRouter()
 
@@ -15,7 +20,7 @@ function change(event) {
 
 <template>
   <div class="lang">
-    <label for="lang-select" class="sr-only">{{ t('nav.language') }}</label>
+    <label :for="props.id" class="sr-only">{{ t('nav.language') }}</label>
     <svg class="lang__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
       <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6" />
       <path
@@ -25,7 +30,7 @@ function change(event) {
         stroke-width="1.6"
       />
     </svg>
-    <select id="lang-select" class="lang__select" :value="locale" @change="change">
+    <select :id="props.id" class="lang__select" :value="locale" @change="change">
       <option v-for="l in LOCALES" :key="l.code" :value="l.code" :lang="l.htmlLang">
         {{ l.name }}
       </option>
@@ -56,7 +61,7 @@ function change(event) {
   background-color: transparent;
   color: var(--text);
   font: inherit;
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
   cursor: pointer;
   transition: background-color var(--dur) var(--ease-out);
 }

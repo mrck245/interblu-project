@@ -93,7 +93,7 @@ watchEffect(() => {
 
 <style scoped>
 .page-header h1 {
-  font-size: clamp(2.6rem, 7vw, 4.2rem);
+  font-size: var(--fs-display);
   margin: 1rem 0 0.25rem;
 }
 .back {
@@ -104,7 +104,7 @@ watchEffect(() => {
   text-decoration: underline;
 }
 .tagline {
-  font-size: 1.15rem;
+  font-size: var(--fs-lead);
   color: var(--text);
   margin: 0;
 }
@@ -116,7 +116,7 @@ watchEffect(() => {
   margin: 1.5rem 0 0;
 }
 .facts dt {
-  font-size: 0.8rem;
+  font-size: var(--fs-label);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -124,7 +124,7 @@ watchEffect(() => {
 }
 .facts dd {
   margin: 0.15rem 0 0;
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   color: var(--heading);
   font-weight: 600;
 }

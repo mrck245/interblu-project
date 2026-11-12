@@ -54,10 +54,12 @@ function closeMenu() {
         >
           {{ t(link.key) }}
         </RouterLink>
+        <!-- En móvil el selector de idioma va dentro del menú, para no saturar la cabecera -->
+        <LanguageSwitcher id="lang-select-menu" class="nav__lang" />
       </nav>
 
       <div class="header__tools">
-        <LanguageSwitcher />
+        <LanguageSwitcher class="header__lang" />
         <button
           ref="toggle"
           class="header__toggle"
@@ -105,6 +107,10 @@ function closeMenu() {
   margin-inline-start: auto;
 }
 
+.nav__lang {
+  display: none;
+}
+
 .header__tools {
   display: flex;
   align-items: center;
@@ -117,7 +123,7 @@ function closeMenu() {
   color: var(--text);
   text-decoration: none;
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -164,7 +170,15 @@ function closeMenu() {
    el menú se pliega antes de que falte espacio. */
 @media (max-width: 980px) {
   .header__logo {
-    height: 64px;
+    height: 52px;
+  }
+  .header__lang {
+    display: none;
+  }
+  .nav__lang {
+    display: inline-flex;
+    margin-top: 0.75rem;
+    align-self: flex-start;
   }
   .header__toggle {
     display: flex;
@@ -189,7 +203,7 @@ function closeMenu() {
   }
   .nav__link {
     padding: 0.8rem 1rem;
-    font-size: 1.15rem;
+    font-size: var(--fs-lead);
   }
 }
 </style>

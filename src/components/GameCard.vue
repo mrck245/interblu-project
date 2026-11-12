@@ -55,7 +55,7 @@ defineProps({
   padding: 1.25rem 1.4rem 1.5rem;
 }
 .game-card__title {
-  font-size: 1.4rem;
+  font-size: var(--fs-h3);
   margin: 0.6rem 0 0.4rem;
 }
 .game-card__body p {

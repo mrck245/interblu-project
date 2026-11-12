@@ -106,7 +106,7 @@ const year = new Date().getFullYear()
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.5rem;
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
 }
 .footer__bottom a {
   color: var(--teal-soft);

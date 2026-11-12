@@ -64,7 +64,7 @@ watchEffect(() => {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
 }
 .post__header .badge {
   text-decoration: none;

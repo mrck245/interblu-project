@@ -40,12 +40,12 @@ defineProps({
 }
 
 time {
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: var(--text);
   font-weight: 600;
 }
 .post-card__title {
-  font-size: 1.4rem;
+  font-size: var(--fs-h3);
   margin: 0.4rem 0;
 }
 p {

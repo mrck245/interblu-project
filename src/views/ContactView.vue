@@ -55,7 +55,7 @@ import { t } from '@/i18n'
 }
 .label {
   display: block;
-  font-size: 0.8rem;
+  font-size: var(--fs-label);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -65,13 +65,13 @@ import { t } from '@/i18n'
   display: block;
   margin-top: 0.3rem;
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 4vw, 1.6rem);
+  font-size: var(--fs-h3);
   color: var(--heading);
   overflow-wrap: anywhere;
 }
 
 .social-title {
-  font-size: 1.4rem;
+  font-size: var(--fs-h3);
   margin: 2.5rem 0 1rem;
 }
 

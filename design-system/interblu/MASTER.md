@@ -77,6 +77,8 @@ El resto de páginas siguen con un único fondo turquesa.
 - **Títulos:** Marcellus (local, `font-display: swap`), con `text-wrap: balance`.
 - **Cuerpo:** pila del sistema (`system-ui`), 17px, interlineado 1.6.
 - **Medida:** el texto largo se limita a 60–68ch (`.prose`, `.lead`).
+- **Escala única** (tokens `--fs-*` en `src/assets/main.css`), fluida entre móvil y escritorio: label 13px · small 14px · body 16→17px · lead 17→20px · h3 19→22px · h2 23→36px · h1 28→48px · display 31→58px. No usar tamaños sueltos en los componentes.
+- En móvil (≤980px) el selector de idioma va dentro del menú desplegable y el logo mide 52px.
 
 ## Logo
 

@@ -85,11 +85,11 @@ const otherGames = computed(() =>
 
 <style scoped>
 .hero {
-  padding: clamp(56px, 9vw, 112px) 0 clamp(40px, 6vw, 72px);
+  padding-block: clamp(36px, 9vw, 112px) clamp(36px, 6vw, 72px);
 }
 .hero h1 {
   max-width: 18ch;
-  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-size: var(--fs-display);
 }
 .hero .lead {
   margin: 0;
@@ -119,7 +119,7 @@ const otherGames = computed(() =>
   background: #000;
 }
 .featured h2 {
-  font-size: clamp(2.2rem, 4.5vw, 3rem);
+  font-size: var(--fs-h1);
   margin-bottom: 0.75rem;
 }
 .meta {
@@ -129,11 +129,11 @@ const otherGames = computed(() =>
   gap: 0.5rem 1rem;
 }
 .meta__release {
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
   color: var(--text);
 }
 .featured__summary {
-  font-size: 1.1rem;
+  font-size: var(--fs-lead);
   color: var(--text);
   margin: 1.25rem 0 1.75rem;
 }
@@ -142,7 +142,8 @@ const otherGames = computed(() =>
   display: flex;
   justify-content: space-between;
   align-items: end;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
 }
 .link-more {
   font-weight: 600;

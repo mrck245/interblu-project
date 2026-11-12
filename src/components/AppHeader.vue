@@ -54,8 +54,6 @@ function closeMenu() {
         >
           {{ t(link.key) }}
         </RouterLink>
-        <!-- En móvil el selector de idioma va dentro del menú, para no saturar la cabecera -->
-        <LanguageSwitcher id="lang-select-menu" class="nav__lang" />
       </nav>
 
       <div class="header__tools">
@@ -105,10 +103,6 @@ function closeMenu() {
   display: flex;
   gap: 0.25rem;
   margin-inline-start: auto;
-}
-
-.nav__lang {
-  display: none;
 }
 
 .header__tools {
@@ -167,18 +161,11 @@ function closeMenu() {
 }
 
 /* Con 5 enlaces + selector de idioma, en algunos idiomas los textos son largos:
-   el menú se pliega antes de que falte espacio. */
+   el menú se pliega antes de que falte espacio. El selector de idioma se queda en la
+   cabecera, junto al botón del menú (dentro del menú, su lista se salía de la pantalla). */
 @media (max-width: 980px) {
   .header__logo {
     height: 60px;
-  }
-  .header__lang {
-    display: none;
-  }
-  .nav__lang {
-    display: inline-flex;
-    margin-top: 0.75rem;
-    align-self: flex-start;
   }
   .header__toggle {
     display: flex;

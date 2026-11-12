@@ -11,7 +11,7 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { LOCALES, locale, localePath, stripLocale, t } from '@/i18n'
 
-// Puede haber dos selectores (cabecera y menú móvil): cada uno necesita su propio id
+// Si hubiera más de un selector en la página, cada uno necesita su propio id
 const props = defineProps({
   id: { type: String, default: 'lang-select' },
 })
@@ -126,7 +126,7 @@ onBeforeUnmount(() => document.removeEventListener('click', onDocumentClick))
           stroke-width="1.6"
         />
       </svg>
-      <span :lang="current.htmlLang">{{ current.name }}</span>
+      <span class="lang__name" :lang="current.htmlLang">{{ current.name }}</span>
       <span class="lang__chevron" :class="{ 'is-open': open }" aria-hidden="true"></span>
     </button>
 
@@ -197,11 +197,15 @@ onBeforeUnmount(() => document.removeEventListener('click', onDocumentClick))
   transform: rotate(180deg);
 }
 
-/* Lista: rectangular, opciones pegadas, sin radios */
+/* Lista: rectangular, opciones pegadas, sin radios.
+   Alineada al borde final del botón (el selector está al final de la cabecera),
+   y con scroll solo si la pantalla es tan baja que no cabe (móvil en horizontal). */
 .lang__list {
   position: absolute;
   top: calc(100% + 6px);
-  inset-inline-start: 0;
+  inset-inline-end: 0;
+  max-height: calc(100dvh - var(--header-h) - 16px);
+  overflow-y: auto;
   z-index: 50;
   min-width: 100%;
   margin: 0;
@@ -241,5 +245,15 @@ onBeforeUnmount(() => document.removeEventListener('click', onDocumentClick))
 }
 [dir='rtl'] .lang__option[aria-selected='true'].is-active {
   box-shadow: inset -4px 0 0 var(--teal);
+}
+
+/* Pantallas muy estrechas: solo el globo (el nombre del idioma sigue en aria-label) */
+@media (max-width: 359px) {
+  .lang__name {
+    display: none;
+  }
+  .lang__chevron {
+    margin-inline-start: 0;
+  }
 }
 </style>

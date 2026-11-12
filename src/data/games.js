@@ -58,6 +58,7 @@ export function localizeGame(game) {
   return {
     ...game,
     status: t(`common.statuses.${game.status}`),
+    localTitle: text('localTitle'), // nombre en el idioma local (opcional)
     release: text('release'),
     summary: text('summary'),
     description: text('description'),

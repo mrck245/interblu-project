@@ -20,7 +20,10 @@ defineProps({
     </div>
     <div class="game-card__body">
       <span class="badge">{{ game.status }}</span>
-      <component :is="`h${headingLevel}`" class="game-card__title">{{ game.title }}</component>
+      <component :is="`h${headingLevel}`" class="game-card__title">
+        {{ game.title }}
+        <span v-if="game.localTitle" class="title-local">{{ game.localTitle }}</span>
+      </component>
       <p>{{ game.summary }}</p>
     </div>
   </RouterLink>

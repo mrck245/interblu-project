@@ -93,7 +93,10 @@ function scrollToNext() {
       </div>
       <div>
         <p class="eyebrow">{{ t('home.featuredEyebrow') }}</p>
-        <h2>{{ featured.title }}</h2>
+        <h2>
+          {{ featured.title }}
+          <span v-if="featured.localTitle" class="title-local">{{ featured.localTitle }}</span>
+        </h2>
         <div class="meta">
           <span class="badge">{{ featured.status }}</span>
           <span v-if="featured.release" class="meta__release">

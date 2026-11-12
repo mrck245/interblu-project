@@ -100,6 +100,7 @@ export default {
   },
   gamesData: {
     tulips: {
+      localTitle: 'توليب',
       release: 'يناير 2027 (تقديري)',
       betaNote: 'تتضمن النسخة التجريبية 41 لغة من أصل 60.',
       summary:

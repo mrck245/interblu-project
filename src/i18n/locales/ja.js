@@ -101,6 +101,7 @@ export default {
   },
   gamesData: {
     tulips: {
+      localTitle: 'チューリップ',
       release: '2027年1月（予定）',
       betaNote: 'ベータ版は60言語のうち41言語に対応しています。',
       summary:

@@ -100,6 +100,7 @@ export default {
   },
   gamesData: {
     tulips: {
+      localTitle: '郁金香',
       release: '2027 年 1 月（预计）',
       betaNote: '测试版支持 60 种语言中的 41 种。',
       summary: '俯视角像素风冒险游戏。支持 60 种语言，预计于 2027 年 1 月发售。',

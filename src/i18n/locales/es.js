@@ -104,6 +104,8 @@ export default {
   // Textos de cada juego. La clave es el `slug` de src/data/games.js.
   gamesData: {
     tulips: {
+      // Nombre del juego en este idioma, como subtítulo bajo TULIPS (vacío = no se muestra)
+      localTitle: '',
       release: 'Enero de 2027 (estimado)',
       betaNote: 'La beta incluye 41 de los 60 idiomas.',
       summary:

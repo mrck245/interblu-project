@@ -101,6 +101,7 @@ export default {
   },
   gamesData: {
     tulips: {
+      localTitle: '튤립',
       release: '2027년 1월 (예정)',
       betaNote: '베타 버전은 60개 언어 중 41개를 지원합니다.',
       summary: '탑다운 픽셀 아트 어드벤처. 60개 언어를 지원하며, 2027년 1월 출시 예정입니다.',

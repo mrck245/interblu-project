@@ -24,7 +24,10 @@ watchEffect(() => {
       <RouterLink :to="localePath('/juegos')" class="back"
         ><span class="arrow" aria-hidden="true">←</span> {{ t('game.back') }}</RouterLink
       >
-      <h1>{{ game.title }}</h1>
+      <h1>
+        {{ game.title }}
+        <span v-if="game.localTitle" class="title-local">{{ game.localTitle }}</span>
+      </h1>
       <p v-if="game.tagline" class="tagline">{{ game.tagline }}</p>
       <dl class="facts">
         <div>

@@ -101,6 +101,7 @@ export default {
   },
   gamesData: {
     tulips: {
+      localTitle: '',
       release: 'Janvier 2027 (estimation)',
       betaNote: 'La bêta comprend 41 des 60 langues.',
       summary:

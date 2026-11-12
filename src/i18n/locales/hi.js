@@ -101,6 +101,7 @@ export default {
   },
   gamesData: {
     tulips: {
+      localTitle: 'ट्यूलिप्स',
       release: 'जनवरी 2027 (अनुमानित)',
       betaNote: 'बीटा में 60 में से 41 भाषाएँ शामिल हैं।',
       summary:

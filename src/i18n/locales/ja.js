@@ -44,6 +44,7 @@ export default {
     lead: 'インターブルーはパナマ・チリキを拠点とするインディーゲームスタジオです。当サイトでは、プロジェクトの情報と開発の記録を公開しています。',
     ctaProjects: 'プロジェクトを見る',
     ctaDevlog: '開発ブログを見る',
+    scrollHint: '次のセクションへ',
     featuredEyebrow: 'メインプロジェクト',
     viewSheet: '{title} の詳細を見る',
     updatesEyebrow: '開発ブログ',

@@ -57,7 +57,9 @@
 
   /* Efecto "foco" del inicio */
   --dur-spotlight: 700ms;
-  --spotlight-dim: rgb(0 20 30 / 0.62); /* sombra sobre las secciones de alrededor (0 = nada, 1 = negro) */
+  --spotlight-dim: rgb(
+    0 20 30 / 0.62
+  ); /* sombra sobre las secciones de alrededor (0 = nada, 1 = negro) */
 
   --font-display: 'Marcellus', Georgia, serif;
   /* Escala tipográfica (única para todo el sitio). Los tamaños crecen de forma fluida

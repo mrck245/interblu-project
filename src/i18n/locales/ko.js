@@ -44,6 +44,7 @@ export default {
     lead: '인터블루는 파나마 치리키에 기반을 둔 인디 스튜디오입니다. 이곳에서 프로젝트 정보와 개발 기록을 공개합니다.',
     ctaProjects: '프로젝트 보기',
     ctaDevlog: '개발 일지 보기',
+    scrollHint: '다음 섹션으로 이동',
     featuredEyebrow: '대표 프로젝트',
     viewSheet: '{title} 상세 정보',
     updatesEyebrow: '개발 일지',

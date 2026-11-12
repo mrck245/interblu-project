@@ -27,10 +27,24 @@ onMounted(() => {
   observer.observe(featuredSection.value)
 })
 onBeforeUnmount(() => observer?.disconnect())
+
+// Indicador de la portada: baja hasta la siguiente sección, dejando sitio para la cabecera fija.
+// Con "reducir movimiento" activado, el salto es inmediato.
+function scrollToNext() {
+  const target = featuredSection.value
+  if (!target) return
+  const headerH =
+    parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 0
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  window.scrollTo({
+    top: target.getBoundingClientRect().top + window.scrollY - headerH,
+    behavior: reduce ? 'auto' : 'smooth',
+  })
+}
 </script>
 
 <template>
-  <section class="hero dimmable" :class="{ 'is-dimmed': spotlit }">
+  <section class="hero panel dimmable" :class="{ 'is-dimmed': spotlit }">
     <div class="container">
       <p class="eyebrow">{{ t('home.eyebrow') }}</p>
       <h1>{{ t('home.title') }}</h1>
@@ -42,12 +56,30 @@ onBeforeUnmount(() => observer?.disconnect())
         }}</RouterLink>
       </div>
     </div>
+
+    <button
+      type="button"
+      class="scroll-hint"
+      :aria-label="t('home.scrollHint')"
+      @click="scrollToNext"
+    >
+      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+        <path
+          d="M6 9l6 6 6-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
   </section>
 
   <!-- Tono normal del inicio; al quedar en el centro de la pantalla adopta el tema del juego -->
   <section
     ref="featuredSection"
-    class="section tone-featured spotlight"
+    class="section panel tone-featured spotlight"
     :class="spotlit && featured.theme && `theme-${featured.theme}`"
   >
     <div class="container featured">
@@ -78,7 +110,7 @@ onBeforeUnmount(() => observer?.disconnect())
 
   <section
     v-if="latestPosts.length"
-    class="section tone-updates dimmable"
+    class="section panel tone-updates dimmable"
     :class="{ 'is-dimmed': spotlit }"
   >
     <div class="container">
@@ -99,7 +131,7 @@ onBeforeUnmount(() => observer?.disconnect())
 
   <section
     v-if="otherGames.length"
-    class="section tone-projects dimmable"
+    class="section panel tone-projects dimmable"
     :class="{ 'is-dimmed': spotlit }"
   >
     <div class="container">
@@ -113,6 +145,52 @@ onBeforeUnmount(() => observer?.disconnect())
 </template>
 
 <style scoped>
+/* Cada sección del inicio ocupa al menos una pantalla completa (sin contar la cabecera),
+   con el contenido centrado en vertical: al abrir la página solo se ve la portada y
+   cada sección aparece entera al desplazarse. Si el contenido es más alto, la sección crece. */
+.panel {
+  min-height: calc(100vh - var(--header-h));
+  min-height: calc(100dvh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Indicador para bajar: discreto, centrado al pie de la portada, con un rebote suave */
+.scroll-hint {
+  position: absolute;
+  bottom: clamp(16px, 4vh, 40px);
+  left: 50%;
+  translate: -50% 0;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  opacity: 0.85;
+  animation: scroll-hint-bounce 2.2s ease-in-out infinite;
+  transition:
+    background-color var(--dur) var(--ease-out),
+    opacity var(--dur) var(--ease-out);
+}
+.scroll-hint:hover {
+  background: var(--surface);
+  opacity: 1;
+}
+@keyframes scroll-hint-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
 .hero {
   padding-block: clamp(36px, 9vw, 112px) clamp(36px, 6vw, 72px);
 }

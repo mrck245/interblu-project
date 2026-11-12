@@ -44,6 +44,7 @@ export default {
     lead: 'Interblü ist ein unabhängiges Studio mit Sitz in Chiriquí, Panama. Hier finden Sie Informationen zu unseren Projekten und zu ihrer Entwicklung.',
     ctaProjects: 'Projekte ansehen',
     ctaDevlog: 'Devlog ansehen',
+    scrollHint: 'Zum nächsten Abschnitt',
     featuredEyebrow: 'Hauptprojekt',
     viewSheet: 'Details zu {title}',
     updatesEyebrow: 'Devlog',

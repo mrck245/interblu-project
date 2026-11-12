@@ -43,6 +43,7 @@ export default {
     lead: 'إنتربلو استوديو مستقل مقره تشيريكي في بنما. ننشر هنا معلومات عن مشاريعنا وسجلًا لمراحل تطويرها.',
     ctaProjects: 'عرض المشاريع',
     ctaDevlog: 'عرض سجل التطوير',
+    scrollHint: 'الانتقال إلى القسم التالي',
     featuredEyebrow: 'المشروع الرئيسي',
     viewSheet: 'عرض تفاصيل {title}',
     updatesEyebrow: 'سجل التطوير',

@@ -1,13 +1,22 @@
 <script setup>
 import flower from '@/assets/brand/flower-white.webp'
 import { socials, contactEmail } from '@/data/socials'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { getGame } from '@/data/games'
 import { t, localePath } from '@/i18n'
 
 const year = new Date().getFullYear()
+
+// En la ficha de un juego con tema propio (p. ej. TULIPS), el footer adopta ese tema
+const route = useRoute()
+const theme = computed(() =>
+  route.name === 'game' ? (getGame(route.params.slug)?.theme ?? null) : null,
+)
 </script>
 
 <template>
-  <footer class="footer">
+  <footer class="footer" :class="theme && `theme-${theme}`">
     <div class="container footer__inner">
       <div class="footer__brand">
         <RouterLink :to="localePath('/')" :aria-label="t('nav.homeLink')">
@@ -110,6 +119,27 @@ const year = new Date().getFullYear()
 }
 .footer__bottom a {
   color: var(--teal-soft);
+}
+
+/* Footer con el tema de TULIPS (solo en su ficha): negro, texto blanco, hover morado.
+   El icono blanco sobre morado da 3.3:1, suficiente para iconos (mínimo 3:1). */
+.footer.theme-tulips {
+  background: var(--tulips-black);
+  color: var(--white);
+  border-top: 1px solid rgb(255 255 255 / 0.12);
+}
+.footer.theme-tulips .footer__social a {
+  transition: background-color var(--dur) var(--ease-out);
+}
+.footer.theme-tulips .footer__social a:hover {
+  background: var(--tulips-purple);
+}
+.footer.theme-tulips .footer__bottom a {
+  color: var(--white);
+  transition: color var(--dur) var(--ease-out);
+}
+.footer.theme-tulips .footer__bottom a:hover {
+  color: var(--tulips-purple);
 }
 
 /* Móvil: todo el pie centrado (flor, texto, redes y copyright) */

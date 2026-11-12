@@ -44,6 +44,7 @@ export default {
     lead: 'A Interblü é um estúdio independente sediado em Chiriquí, Panamá. Aqui publicamos informações sobre nossos projetos e o registro de seu desenvolvimento.',
     ctaProjects: 'Ver projetos',
     ctaDevlog: 'Ver devlog',
+    scrollHint: 'Ir para a próxima seção',
     featuredEyebrow: 'Projeto principal',
     viewSheet: 'Ver ficha de {title}',
     updatesEyebrow: 'Devlog',

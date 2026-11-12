@@ -33,10 +33,14 @@ router.afterEach((to, from) => {
   display: flex;
   flex-direction: column;
 }
+/* El contenido ocupa al menos una pantalla completa (sin contar la cabecera):
+   así el footer nunca asoma en la primera vista, aunque la página sea corta. */
 .app__main {
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: calc(100vh - var(--header-h));
+  min-height: calc(100dvh - var(--header-h));
 }
 .app__main:focus {
   outline: none;

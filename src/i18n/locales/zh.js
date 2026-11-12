@@ -43,6 +43,7 @@ export default {
     lead: '互花是一家总部位于巴拿马奇里基的独立工作室。我们在此发布项目信息及其开发记录。',
     ctaProjects: '查看项目',
     ctaDevlog: '查看开发日志',
+    scrollHint: '前往下一部分',
     featuredEyebrow: '主要项目',
     viewSheet: '查看 {title} 详情',
     updatesEyebrow: '开发日志',

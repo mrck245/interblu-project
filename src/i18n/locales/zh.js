@@ -101,6 +101,7 @@ export default {
   gamesData: {
     tulips: {
       release: '2027 年 1 月（预计）',
+      betaNote: '测试版支持 60 种语言中的 41 种。',
       summary: '俯视角像素风冒险游戏。支持 60 种语言，预计于 2027 年 1 月发售。',
       description: [
         'TULIPS 是互花目前正在开发的主要项目：一款拥有手绘场景的俯视角像素风冒险游戏。',

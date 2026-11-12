@@ -59,6 +59,9 @@ watchEffect(() => {
               >
                 {{ link.label }}
               </a>
+              <p v-for="link in game.links.filter((l) => l.note)" :key="`note-${link.url}`" class="link-note">
+                {{ link.note }}
+              </p>
               <p v-if="!game.links.length" class="soon">
                 {{ t('game.unavailableBefore') }}
                 <RouterLink :to="localePath('/devlog')">{{ t('game.unavailableLink') }}</RouterLink
@@ -156,6 +159,12 @@ watchEffect(() => {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
+}
+.link-note {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--fs-label);
 }
 .soon {
   margin: 0;

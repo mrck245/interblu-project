@@ -102,6 +102,7 @@ export default {
   gamesData: {
     tulips: {
       release: 'Janvier 2027 (estimation)',
+      betaNote: 'La bêta comprend 41 des 60 langues.',
       summary:
         'Aventure en pixel art en vue de dessus. Disponible en 60 langues, avec une sortie prévue en janvier 2027.',
       description: [

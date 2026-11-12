@@ -102,6 +102,7 @@ export default {
   gamesData: {
     tulips: {
       release: 'Januar 2027 (voraussichtlich)',
+      betaNote: 'Die Beta enthält 41 der 60 Sprachen.',
       summary:
         'Pixel-Art-Abenteuer in der Draufsicht. Verfügbar in 60 Sprachen, voraussichtliche Veröffentlichung im Januar 2027.',
       description: [

@@ -105,6 +105,7 @@ export default {
   gamesData: {
     tulips: {
       release: 'Enero de 2027 (estimado)',
+      betaNote: 'La beta incluye 41 de los 60 idiomas.',
       summary:
         'Aventura en pixel art con vista cenital. Disponible en 60 idiomas, con lanzamiento estimado para enero de 2027.',
       description: [

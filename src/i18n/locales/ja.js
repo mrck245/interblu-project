@@ -102,6 +102,7 @@ export default {
   gamesData: {
     tulips: {
       release: '2027年1月（予定）',
+      betaNote: 'ベータ版は60言語のうち41言語に対応しています。',
       summary:
         '見下ろし型のピクセルアート・アドベンチャー。60言語に対応し、2027年1月の発売を予定しています。',
       description: [

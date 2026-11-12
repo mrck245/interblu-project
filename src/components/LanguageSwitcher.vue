@@ -83,6 +83,47 @@ function change(event) {
   color: var(--white);
 }
 
+/* Desplegable personalizable (<select> nativo con `appearance: base-select`, Chromium 135+).
+   Permite opciones rectangulares y sin huecos. En navegadores sin soporte se ignora y
+   se ve el desplegable del sistema, que sigue funcionando igual. */
+@supports (appearance: base-select) {
+  .lang__select,
+  .lang__select::picker(select) {
+    appearance: base-select;
+  }
+  .lang__select::picker-icon {
+    display: none; /* ya usamos nuestra propia flecha (.lang__chevron) */
+  }
+  .lang__select::picker(select) {
+    margin-top: 6px;
+    padding: 0;
+    border: 1px solid var(--border-strong);
+    border-radius: 0;
+    background: var(--navy);
+    box-shadow: 0 12px 24px rgb(0 20 30 / 0.35);
+  }
+  .lang__select option {
+    min-height: 44px;
+    padding: 0.55rem 1rem;
+    border-radius: 0;
+    font-size: var(--fs-small);
+    transition: background-color var(--dur-fast) var(--ease-out);
+  }
+  .lang__select option::checkmark {
+    display: none;
+  }
+  .lang__select option:hover,
+  .lang__select option:focus-visible {
+    background: var(--teal);
+    outline: none;
+  }
+  .lang__select option:checked {
+    background: var(--white);
+    color: var(--navy);
+    font-weight: 600;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

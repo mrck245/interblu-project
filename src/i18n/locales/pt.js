@@ -2,7 +2,7 @@
 export default {
   meta: {
     description:
-      'Interblü, estúdio independente de videogames em Bugaba, Panamá. Projetos e registro de desenvolvimento.',
+      'Interblü, estúdio independente de videogames em Chiriquí, Panamá. Projetos e registro de desenvolvimento.',
     home: 'Estúdio independente de videogames',
     games: 'Projetos',
     devlog: 'Devlog',
@@ -24,7 +24,7 @@ export default {
   },
   footer: {
     tagline: 'Estúdio independente de videogames.',
-    location: 'Bugaba, Panamá.',
+    location: 'Chiriquí, Panamá.',
     rights: 'Todos os direitos reservados.',
   },
   common: {
@@ -39,7 +39,7 @@ export default {
   home: {
     eyebrow: 'Estúdio independente de videogames',
     title: 'Desenvolvemos videogames com identidade própria.',
-    lead: 'A Interblü é um estúdio independente sediado em Bugaba, Panamá. Aqui publicamos informações sobre nossos projetos e o registro de seu desenvolvimento.',
+    lead: 'A Interblü é um estúdio independente sediado em Chiriquí, Panamá. Aqui publicamos informações sobre nossos projetos e o registro de seu desenvolvimento.',
     ctaProjects: 'Ver projetos',
     ctaDevlog: 'Ver devlog',
     featuredEyebrow: 'Projeto principal',
@@ -74,7 +74,7 @@ export default {
     eyebrow: 'Sobre nós',
     title: 'Sobre a Interblü',
     paragraphs: [
-      'A Interblü é um estúdio independente de videogames fundado em outubro de 2025 em Bugaba, Panamá. Começou como uma marca de desenvolvimento de software e, desde 2026, dedica-se exclusivamente aos videogames.',
+      'A Interblü é um estúdio independente de videogames fundado em outubro de 2025 em Chiriquí, Panamá. Começou como uma marca de desenvolvimento de software e, desde 2026, dedica-se exclusivamente aos videogames.',
       'Nosso objetivo é criar jogos com uma identidade artística clara e uma experiência cuidadosa. Documentamos o desenvolvimento de forma aberta no devlog para que jogadores e colaboradores possam acompanhar o avanço de cada projeto.',
     ],
     teamTitle: 'Equipe',

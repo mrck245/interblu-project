@@ -2,7 +2,7 @@
 export default {
   meta: {
     description:
-      'Interblü 是一家位于巴拿马布加巴的独立游戏工作室。在这里了解我们的项目和开发日志。',
+      'Interblü 是一家位于巴拿马奇里基的独立游戏工作室。在这里了解我们的项目和开发日志。',
     home: '独立游戏工作室',
     games: '项目',
     devlog: '开发日志',
@@ -24,7 +24,7 @@ export default {
   },
   footer: {
     tagline: '独立游戏工作室',
-    location: '巴拿马布加巴',
+    location: '巴拿马奇里基',
     rights: '版权所有。',
   },
   common: {
@@ -39,7 +39,7 @@ export default {
   home: {
     eyebrow: '独立游戏工作室',
     title: '我们开发具有独特个性的电子游戏。',
-    lead: 'Interblü 是一家总部位于巴拿马布加巴的独立工作室。我们在此发布项目信息及其开发记录。',
+    lead: 'Interblü 是一家总部位于巴拿马奇里基的独立工作室。我们在此发布项目信息及其开发记录。',
     ctaProjects: '查看项目',
     ctaDevlog: '查看开发日志',
     featuredEyebrow: '主要项目',
@@ -74,7 +74,7 @@ export default {
     eyebrow: '关于我们',
     title: '关于 Interblü',
     paragraphs: [
-      'Interblü 是一家独立游戏工作室，于 2025 年 10 月在巴拿马布加巴成立。工作室最初是一个软件开发品牌，自 2026 年起专注于电子游戏开发。',
+      'Interblü 是一家独立游戏工作室，于 2025 年 10 月在巴拿马奇里基成立。工作室最初是一个软件开发品牌，自 2026 年起专注于电子游戏开发。',
       '我们的目标是打造具有鲜明艺术风格和精心设计体验的游戏。我们在开发日志中公开记录开发过程，方便玩家和合作伙伴了解每个项目的进展。',
     ],
     teamTitle: '团队',

@@ -4,7 +4,7 @@
 export default {
   meta: {
     description:
-      'Interblü, estudio independiente de videojuegos en Bugaba, Panamá. Proyectos y registro de desarrollo.',
+      'Interblü, estudio independiente de videojuegos en Chiriquí, Panamá. Proyectos y registro de desarrollo.',
     home: 'Estudio independiente de videojuegos',
     games: 'Proyectos',
     devlog: 'Devlog',
@@ -26,7 +26,7 @@ export default {
   },
   footer: {
     tagline: 'Estudio independiente de videojuegos.',
-    location: 'Bugaba, Panamá.',
+    location: 'Chiriquí, Panamá.',
     rights: 'Todos los derechos reservados.',
   },
   common: {
@@ -41,7 +41,7 @@ export default {
   home: {
     eyebrow: 'Estudio independiente de videojuegos',
     title: 'Desarrollamos videojuegos con identidad propia.',
-    lead: 'Interblü es un estudio independiente con sede en Bugaba, Panamá. Aquí publicamos información sobre nuestros proyectos y el registro de su desarrollo.',
+    lead: 'Interblü es un estudio independiente con sede en Chiriquí, Panamá. Aquí publicamos información sobre nuestros proyectos y el registro de su desarrollo.',
     ctaProjects: 'Ver proyectos',
     ctaDevlog: 'Ver devlog',
     featuredEyebrow: 'Proyecto principal',
@@ -76,7 +76,7 @@ export default {
     eyebrow: 'Nosotros',
     title: 'Sobre Interblü',
     paragraphs: [
-      'Interblü es un estudio independiente de videojuegos fundado en octubre de 2025 en Bugaba, Panamá. Comenzó como una marca de desarrollo de software y desde 2026 se dedica exclusivamente a los videojuegos.',
+      'Interblü es un estudio independiente de videojuegos fundado en octubre de 2025 en Chiriquí, Panamá. Comenzó como una marca de desarrollo de software y desde 2026 se dedica exclusivamente a los videojuegos.',
       'Nuestro objetivo es crear juegos con una identidad artística clara y una experiencia cuidada. Documentamos el desarrollo de forma abierta en el devlog para que jugadores y colaboradores puedan seguir el avance de cada proyecto.',
     ],
     teamTitle: 'Equipo',

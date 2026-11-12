@@ -62,7 +62,10 @@
     3.6rem
   ); /*        31 → 58px (titular del inicio y de cada juego) */
 
-  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+  /* Cuerpo de texto: Inter. Para japonés, chino, coreano, hindi y árabe (que Inter no
+     incluye), el navegador usa automáticamente la fuente del sistema de la lista. */
+  --font-body:
+    'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
 
   --radius: 14px;
   --container: 1120px;

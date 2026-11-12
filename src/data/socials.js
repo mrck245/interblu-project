@@ -7,14 +7,19 @@ import github from '@/assets/social/github.webp'
 export const contactEmail = 'contact.interblu@gmail.com'
 
 export const socials = [
-  { name: 'YouTube', handle: '@interblustd', url: 'https://youtube.com/@mrck224', icon: youtube },
+  {
+    name: 'YouTube',
+    handle: '@InterblüGames',
+    url: 'https://youtube.com/@InterblüGames',
+    icon: youtube,
+  },
   {
     name: 'Instagram',
     handle: '@interblustd',
-    url: 'https://instagram.com/montm24',
+    url: 'https://instagram.com/interblustd',
     icon: instagram,
   },
-  { name: 'X', handle: '@interblustd', url: 'https://x.com/mrck245', icon: x },
+  { name: 'X', handle: '@interblu_games', url: 'https://x.com/interblu_games', icon: x },
   {
     name: 'Facebook',
     handle: 'Interblü Studio',

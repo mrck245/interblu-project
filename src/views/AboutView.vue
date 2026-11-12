@@ -2,7 +2,7 @@
 import { t } from '@/i18n'
 
 const team = [
-  { handle: 'mrck245', roleKey: 'about.roles.programming' },
+  { handle: 'q4verrr', roleKey: 'about.roles.programming' },
   { handle: 'xmoonshell', roleKey: 'about.roles.art' },
 ]
 </script>

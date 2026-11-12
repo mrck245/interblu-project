@@ -111,4 +111,25 @@ const year = new Date().getFullYear()
 .footer__bottom a {
   color: var(--teal-soft);
 }
+
+/* Móvil: todo el pie centrado (flor, texto, redes y copyright) */
+@media (max-width: 640px) {
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer__brand {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .footer__social {
+    justify-content: center;
+    margin-inline: 0;
+  }
+  .footer__bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
 </style>

@@ -96,10 +96,23 @@ El resto de páginas siguen con un único fondo turquesa.
 - **RTL:** usar solo propiedades lógicas (`inset-inline-*`, `padding-inline-*`, `margin-inline-*`,
   `border-inline-*`). Las flechas de texto llevan la clase `.arrow`, que se invierte en árabe.
   Correos y nombres de usuario van dentro de `<bdi>` para no desordenarse en árabe.
-- **Tipografía:** Marcellus solo tiene letras latinas; en ja/zh/ko/hi/ar los títulos usan la fuente del sistema.
+- **Tipografía por escritura** (todas OFL, incluidas en el proyecto y cargadas solo al elegir el idioma desde `src/i18n/fonts.js`):
+  | Idioma | Títulos (carácter de Marcellus) | Cuerpo |
+  |---|---|---|
+  | ja | Shippori Mincho | Noto Sans JP |
+  | zh | Noto Serif SC | Noto Sans SC |
+  | ko | Gowun Batang | Noto Sans KR |
+  | hi | Tiro Devanagari Hindi | Noto Sans Devanagari |
+  | ar | Amiri | Noto Sans Arabic |
+  Las palabras latinas dentro de esos idiomas siguen en Marcellus (títulos) e Inter (cuerpo).
   En hi/ar el interlineado sube a 1.75 y en ar no se usa espaciado entre letras (rompe la unión de caracteres).
+- **Nombre del estudio por idioma** (clave `brand` de cada archivo de idioma; el logo es imagen y no cambia): Interblü en es/en/fr/de/pt · 互花 (zh) · インターブルー (ja) · 인터블루 (ko) · इंटरब्लू (hi) · إنتربلو (ar). En el código, usar `t('brand')`, nunca el nombre escrito a mano.
 - Fechas con `Intl.DateTimeFormat` del idioma activo (`formatDate` en `src/i18n`).
 - El tono profesional/servicial aplica a todos los idiomas (trato formal: usted, vous, Sie, です/ます, 합니다, 您, आप).
+
+## Pendiente (próximas entregas)
+
+- **Sección de TULIPS con la estética del juego** (pedido del usuario, 2026-11-12): en el inicio y en su ficha de juego, fondo negro, texto blanco, y título y hover en morado (el morado del logo de TULIPS), imitando la pantalla de título del juego.
 
 ## Tono de los textos
 

@@ -11,7 +11,7 @@ const post = computed(() => getPost(route.params.slug))
 const game = computed(() => (post.value?.game ? getGame(post.value.game) : null))
 
 watchEffect(() => {
-  if (post.value) document.title = `${post.value.title} · Interblü`
+  if (post.value) document.title = `${post.value.title} · ${t('brand')}`
 })
 </script>
 

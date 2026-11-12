@@ -174,10 +174,31 @@ a {
   }
 }
 
-/* Idiomas con escrituras no latinas: Marcellus solo tiene letras latinas, así que los
-   títulos usan la fuente del sistema (que sí tiene japonés, chino, coreano, hindi y árabe). */
-:root:is(:lang(ja), :lang(zh), :lang(ko), :lang(hi), :lang(ar)) {
-  --font-display: var(--font-body);
+/* Idiomas con escrituras no latinas.
+   Marcellus e Inter solo tienen letras latinas: cada idioma añade su par de fuentes
+   (títulos clásicos con el carácter de Marcellus + Noto Sans para el cuerpo).
+   Las palabras latinas (TULIPS, Interblü...) siguen en Marcellus/Inter; el resto de
+   caracteres usa la fuente de su escritura. Se cargan solo al elegir el idioma
+   (src/i18n/fonts.js). Si aún no han llegado, se ve la fuente del sistema. */
+:root:lang(ja) {
+  --font-display: 'Marcellus', 'Shippori Mincho', serif;
+  --font-body: 'Inter Variable', 'Noto Sans JP Variable', system-ui, sans-serif;
+}
+:root:lang(zh) {
+  --font-display: 'Marcellus', 'Noto Serif SC', serif;
+  --font-body: 'Inter Variable', 'Noto Sans SC Variable', system-ui, sans-serif;
+}
+:root:lang(ko) {
+  --font-display: 'Marcellus', 'Gowun Batang', serif;
+  --font-body: 'Inter Variable', 'Noto Sans KR Variable', system-ui, sans-serif;
+}
+:root:lang(hi) {
+  --font-display: 'Marcellus', 'Tiro Devanagari Hindi', serif;
+  --font-body: 'Inter Variable', 'Noto Sans Devanagari Variable', system-ui, sans-serif;
+}
+:root:lang(ar) {
+  --font-display: 'Marcellus', 'Amiri', serif;
+  --font-body: 'Inter Variable', 'Noto Sans Arabic Variable', system-ui, sans-serif;
 }
 /* Estas escrituras necesitan algo más de interlineado */
 :root:is(:lang(hi), :lang(ar)) body {

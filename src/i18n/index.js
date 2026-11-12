@@ -6,6 +6,7 @@
 // - URLs: el español va en la raíz (/juegos) y el resto con prefijo (/en/juegos, /ar/juegos...).
 import { ref } from 'vue'
 import es from './locales/es.js'
+import { loadLocaleFonts } from './fonts.js'
 
 export const DEFAULT_LOCALE = 'es'
 
@@ -44,6 +45,7 @@ export async function setLocale(code) {
   const info = localeInfo(code)
   document.documentElement.lang = info.htmlLang
   document.documentElement.dir = info.dir
+  loadLocaleFonts(code)
   const description = document.querySelector('meta[name="description"]')
   if (description) description.setAttribute('content', t('meta.description'))
 }

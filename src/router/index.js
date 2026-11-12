@@ -62,7 +62,7 @@ router.beforeEach(async (to) => {
 })
 
 router.afterEach((to) => {
-  if (to.meta.titleKey) document.title = `${t(to.meta.titleKey)} · Interblü`
+  if (to.meta.titleKey) document.title = `${t(to.meta.titleKey)} · ${t('brand')}`
 })
 
 export default router

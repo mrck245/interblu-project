@@ -12,7 +12,7 @@ const game = computed(() => localizeGame(getGame(route.params.slug)))
 const relatedPosts = computed(() => posts.value.filter((p) => p.game === route.params.slug))
 
 watchEffect(() => {
-  if (game.value) document.title = `${game.value.title} · Interblü`
+  if (game.value) document.title = `${game.value.title} · ${t('brand')}`
 })
 </script>
 

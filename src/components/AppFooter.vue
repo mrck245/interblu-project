@@ -31,7 +31,7 @@ const year = new Date().getFullYear()
     </div>
 
     <div class="container footer__bottom">
-      <span>© {{ year }} Interblü. {{ t('footer.rights') }}</span>
+      <span>© {{ year }} {{ t('brand') }}. {{ t('footer.rights') }}</span>
       <a :href="`mailto:${contactEmail}`">{{ contactEmail }}</a>
     </div>
   </footer>

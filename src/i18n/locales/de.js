@@ -1,9 +1,11 @@
 // Deutsch
 export default {
+  // Nombre del estudio en este idioma (título de la pestaña, copyright, logo)
+  brand: 'Interblü',
   meta: {
     description:
       'Interblü, ein unabhängiges Videospielstudio in Chiriquí, Panama. Projekte und Entwicklungstagebuch.',
-    home: 'Unabhängiges Videospielstudio',
+    home: 'Start',
     games: 'Projekte',
     devlog: 'Devlog',
     about: 'Über uns',

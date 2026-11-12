@@ -1,9 +1,10 @@
 // 简体中文（普通话）
 export default {
+  // Nombre del estudio en este idioma (título de la pestaña, copyright, logo)
+  brand: '互花',
   meta: {
-    description:
-      'Interblü 是一家位于巴拿马奇里基的独立游戏工作室。在这里了解我们的项目和开发日志。',
-    home: '独立游戏工作室',
+    description: '互花是一家位于巴拿马奇里基的独立游戏工作室。在这里了解我们的项目和开发日志。',
+    home: '首页',
     games: '项目',
     devlog: '开发日志',
     about: '关于我们',
@@ -18,7 +19,7 @@ export default {
     contact: '联系我们',
     menu: '菜单',
     primary: '主导航',
-    homeLink: 'Interblü，返回首页',
+    homeLink: '互花，返回首页',
     skip: '跳至正文',
     language: '语言',
   },
@@ -39,7 +40,7 @@ export default {
   home: {
     eyebrow: '独立游戏工作室',
     title: '我们开发具有独特个性的电子游戏。',
-    lead: 'Interblü 是一家总部位于巴拿马奇里基的独立工作室。我们在此发布项目信息及其开发记录。',
+    lead: '互花是一家总部位于巴拿马奇里基的独立工作室。我们在此发布项目信息及其开发记录。',
     ctaProjects: '查看项目',
     ctaDevlog: '查看开发日志',
     featuredEyebrow: '主要项目',
@@ -53,7 +54,7 @@ export default {
   games: {
     eyebrow: '作品目录',
     title: '项目',
-    lead: 'Interblü 正在开发及处于原型阶段的游戏。',
+    lead: '互花正在开发及处于原型阶段的游戏。',
   },
   game: {
     back: '全部项目',
@@ -72,9 +73,9 @@ export default {
   },
   about: {
     eyebrow: '关于我们',
-    title: '关于 Interblü',
+    title: '关于互花',
     paragraphs: [
-      'Interblü 是一家独立游戏工作室，于 2025 年 10 月在巴拿马奇里基成立。工作室最初是一个软件开发品牌，自 2026 年起专注于电子游戏开发。',
+      '互花是一家独立游戏工作室，于 2025 年 10 月在巴拿马奇里基成立。工作室最初是一个软件开发品牌，自 2026 年起专注于电子游戏开发。',
       '我们的目标是打造具有鲜明艺术风格和精心设计体验的游戏。我们在开发日志中公开记录开发过程，方便玩家和合作伙伴了解每个项目的进展。',
     ],
     teamTitle: '团队',
@@ -100,7 +101,7 @@ export default {
       release: '2027 年 1 月（预计）',
       summary: '俯视角像素风冒险游戏。支持 60 种语言，预计于 2027 年 1 月发售。',
       description: [
-        'TULIPS 是 Interblü 目前正在开发的主要项目：一款拥有手绘场景的俯视角像素风冒险游戏。',
+        'TULIPS 是互花目前正在开发的主要项目：一款拥有手绘场景的俯视角像素风冒险游戏。',
         '本游戏支持 60 种语言。我们目前正在评估加入新的游戏模式。',
       ],
       features: ['手绘像素美术', '支持 60 种语言', 'Free-for-all 模式'],

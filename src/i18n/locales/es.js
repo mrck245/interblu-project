@@ -2,10 +2,12 @@
 // Los demás archivos de esta carpeta tienen exactamente la misma estructura.
 // Si a un idioma le falta un texto, se muestra el de este archivo.
 export default {
+  // Nombre del estudio en este idioma (título de la pestaña, copyright, logo)
+  brand: 'Interblü',
   meta: {
     description:
       'Interblü, estudio independiente de videojuegos en Chiriquí, Panamá. Proyectos y registro de desarrollo.',
-    home: 'Estudio independiente de videojuegos',
+    home: 'Inicio',
     games: 'Proyectos',
     devlog: 'Devlog',
     about: 'Nosotros',

@@ -1,6 +1,7 @@
 <script setup>
 // Logo de Interblü recoloreable: usa la imagen como máscara y lo pinta con `color`.
 import logo from '@/assets/brand/logo.webp'
+import { t } from '@/i18n'
 
 defineProps({
   color: { type: String, default: 'var(--navy)' },
@@ -11,7 +12,7 @@ defineProps({
   <span
     class="logo-mark"
     role="img"
-    aria-label="Interblü"
+    :aria-label="t('brand')"
     :style="{ backgroundColor: color, '--logo': `url(${logo})` }"
   ></span>
 </template>

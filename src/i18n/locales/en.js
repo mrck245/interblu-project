@@ -60,6 +60,7 @@ export default {
   },
   game: {
     back: 'All projects',
+    playBeta: 'Play the free beta on itch.io',
     unavailableBefore: 'This game is not available yet. News will be published in the',
     unavailableLink: 'devlog',
     unavailableAfter: '.',

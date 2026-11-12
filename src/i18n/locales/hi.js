@@ -60,6 +60,7 @@ export default {
   },
   game: {
     back: 'सभी परियोजनाएँ',
+    playBeta: 'itch.io पर मुफ़्त बीटा खेलें',
     unavailableBefore: 'यह गेम अभी उपलब्ध नहीं है। नई जानकारी',
     unavailableLink: 'डेवलॉग',
     unavailableAfter: ' में प्रकाशित की जाएगी।',

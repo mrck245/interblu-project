@@ -60,6 +60,7 @@ export default {
   },
   game: {
     back: 'すべてのプロジェクト',
+    playBeta: 'itch.ioで無料ベータ版をプレイ',
     unavailableBefore: 'このゲームはまだ公開されていません。最新情報は',
     unavailableLink: '開発ブログ',
     unavailableAfter: 'でお知らせします。',

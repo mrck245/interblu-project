@@ -25,8 +25,8 @@ export const games = [
     featured: true,
     cover: tulipsMeadow,
     screenshots: [tulipsTitle, tulipsMeadow, tulipsPale],
-    // Cuando el juego esté publicado: [{ label: 'itch.io', url: 'https://...' }]
-    links: [],
+    // Enlaces para jugar/comprar. `labelKey` es una clave de i18n (texto traducido del botón).
+    links: [{ labelKey: 'game.playBeta', url: 'https://interblu.itch.io/tulips' }],
   },
   {
     slug: 'foreign-waltz',
@@ -59,6 +59,7 @@ export function localizeGame(game) {
       src,
       alt: Array.isArray(alts) ? (alts[i] ?? game.title) : game.title,
     })),
+    links: game.links.map((link) => ({ url: link.url, label: t(link.labelKey) })),
   }
 }
 

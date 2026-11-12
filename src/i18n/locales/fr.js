@@ -60,6 +60,7 @@ export default {
   },
   game: {
     back: 'Tous les projets',
+    playBeta: 'Jouer à la bêta gratuite sur itch.io',
     unavailableBefore: 'Ce jeu n’est pas encore disponible. Les nouveautés seront publiées dans le',
     unavailableLink: 'devlog',
     unavailableAfter: '.',

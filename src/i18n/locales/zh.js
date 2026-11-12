@@ -59,6 +59,7 @@ export default {
   },
   game: {
     back: '全部项目',
+    playBeta: '在 itch.io 免费试玩测试版',
     unavailableBefore: '本游戏尚未推出。最新消息将发布在',
     unavailableLink: '开发日志',
     unavailableAfter: '中。',

@@ -59,6 +59,7 @@ export default {
   },
   game: {
     back: 'جميع المشاريع',
+    playBeta: 'العب النسخة التجريبية مجانًا على itch.io',
     unavailableBefore: 'هذه اللعبة غير متاحة بعد. سيتم نشر المستجدات في',
     unavailableLink: 'سجل التطوير',
     unavailableAfter: '.',

@@ -1,34 +1,44 @@
-<template>
-  <AppHeader />
-  <router-view />
-</template>
-
 <script setup>
-import AppHeader from './components/AppHeader.vue'
+import { ref, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
+import AppHeader from '@/components/AppHeader.vue'
+import AppFooter from '@/components/AppFooter.vue'
+import { t } from '@/i18n'
+
+// Al cambiar de página, llevar el foco al contenido principal para que
+// lectores de pantalla y teclado no se queden "perdidos" en el menú.
+const main = ref(null)
+const router = useRouter()
+router.afterEach((to, from) => {
+  if (!from.matched.length || to.path === from.path) return // carga inicial o mismo path
+  nextTick(() => main.value?.focus({ preventScroll: true }))
+})
 </script>
 
+<template>
+  <div class="app">
+    <a href="#main" class="skip-link">{{ t('nav.skip') }}</a>
+    <AppHeader />
+    <main id="main" ref="main" class="app__main" tabindex="-1">
+      <RouterView />
+    </main>
+    <AppFooter />
+  </div>
+</template>
+
 <style>
-/* si quieres darle un color base al fondo */
-main {
-  background-color: white;
+.app {
   min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
+.app__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
-
-.hero,
-.hero2,
-.footer {
-  display: block;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  border: none;
+.app__main:focus {
+  outline: none;
 }
 </style>

@@ -1,0 +1,326 @@
+@font-face {
+  font-family: 'Marcellus';
+  src: url('./fonts/Marcellus-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Paleta tomada del logo de Interblü (azul marino sobre turquesa). */
+:root {
+  /* Colores de marca */
+  --teal: #0a7fa6;
+  --teal-soft: #81c4da;
+  --navy: #00324a;
+  --white: #ffffff;
+
+  /* Tokens semánticos: los componentes usan ESTOS, no los de marca.
+     Contraste medido (WCAG AA pide 4.5:1 en texto normal):
+       --text sobre --bg ............ 4.57:1  (solo blanco sólido cumple sobre el turquesa)
+       --text sobre --surface ....... 6.26:1
+       --text-muted sobre --surface . 4.99:1  (NO usar --text-muted directamente sobre --bg: 4.0:1)
+       azul marino sobre --bg ....... 2.96:1  (no apto para texto; solo logo y bloques) */
+  --bg: var(--teal);
+  --surface: #07688a; /* tarjetas: turquesa oscurecido con 30 % de azul marino */
+  --surface-hover: #066081;
+  --text: var(--white);
+  --text-muted: rgb(255 255 255 / 0.85);
+  --heading: var(--white);
+  --border: rgb(255 255 255 / 0.22);
+  --border-strong: rgb(255 255 255 / 0.6);
+  --focus: var(--white);
+
+  /* ============================================================
+     TONOS DE LAS SECCIONES DEL INICIO
+     Todos los colores de fondo por sección están aquí, para revisarlos uno a uno.
+     Si cambias uno, comprueba el contraste del texto (mínimo 4.5:1).
+     ============================================================ */
+  --tone-hero: var(--teal); /* "Desarrollamos videojuegos" (igual que el fondo general) */
+  --tone-updates: #78b9ce; /* Últimas actualizaciones: turquesa + 45 % blanco · texto AZUL MARINO 6.19:1 */
+  --tone-featured: var(
+    --tone-updates
+  ); /* TULIPS: mismo tono que Últimas actualizaciones · texto azul marino */
+  --tone-updates-card: #aed5e2; /*   tarjetas de esa sección · texto azul marino 80 % 5.35:1 */
+  --tone-updates-card-hover: #bddce7;
+  --tone-projects: #07688a; /* Otros proyectos: turquesa + 30 % azul marino · texto blanco 6.26:1 */
+  --tone-projects-card: #055877; /*   tarjetas de esa sección · texto blanco 85 % 6.18:1 */
+  --tone-projects-card-hover: #045574;
+
+  --font-display: 'Marcellus', Georgia, serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+
+  --radius: 14px;
+  --container: 1120px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --header-h: 96px;
+
+  /* Movimiento: una sola escala para todas las transiciones */
+  --dur-fast: 150ms;
+  --dur: 250ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Que la cabecera fija no tape el elemento enfocado con el teclado */
+  scroll-padding-top: calc(var(--header-h) + 16px);
+}
+
+a,
+button {
+  touch-action: manipulation;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--heading);
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+}
+h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+}
+h3 {
+  font-size: 1.4rem;
+}
+
+a {
+  color: var(--text);
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Flechas de texto (→ ←): en árabe se invierten para apuntar en el sentido de lectura */
+.arrow {
+  display: inline-block;
+}
+[dir='rtl'] .arrow {
+  transform: scaleX(-1);
+}
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: 16px;
+  top: -100px;
+  z-index: 200;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+/* En móvil la cabecera es más baja (el logo baja a 64px) */
+@media (max-width: 980px) {
+  :root {
+    --header-h: 80px;
+  }
+}
+
+/* Idiomas con escrituras no latinas: Marcellus solo tiene letras latinas, así que los
+   títulos usan la fuente del sistema (que sí tiene japonés, chino, coreano, hindi y árabe). */
+:root:is(:lang(ja), :lang(zh), :lang(ko), :lang(hi), :lang(ar)) {
+  --font-display: var(--font-body);
+}
+/* Estas escrituras necesitan algo más de interlineado */
+:root:is(:lang(hi), :lang(ar)) body {
+  line-height: 1.75;
+}
+/* En árabe el espaciado entre letras rompe la unión de los caracteres */
+:root:lang(ar) .eyebrow,
+:root:lang(ar) [class*='label'],
+:root:lang(ar) dt {
+  letter-spacing: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.section {
+  padding-block: clamp(48px, 8vw, 96px);
+}
+
+/* Clases de tono por sección. Los colores vienen de los tokens --tone-* de arriba.
+   Cada clase redefine los tokens semánticos para su fondo, así que tarjetas,
+   enlaces y textos dentro de la sección se ajustan solos. */
+.tone-projects {
+  background: var(--tone-projects);
+  --surface: var(--tone-projects-card);
+  --surface-hover: var(--tone-projects-card-hover);
+}
+/* Tono claro: el texto pasa a azul marino (el blanco no cumple contraste aquí) */
+.tone-featured,
+.tone-updates {
+  color: var(--navy);
+  --text: var(--navy);
+  --heading: var(--navy);
+  --text-muted: rgb(0 50 74 / 0.8);
+  --surface: var(--tone-updates-card);
+  --surface-hover: var(--tone-updates-card-hover);
+  --border: rgb(0 50 74 / 0.2);
+  --border-strong: rgb(0 50 74 / 0.5);
+  --focus: var(--navy);
+}
+.tone-featured {
+  background: var(--tone-featured);
+}
+.tone-updates {
+  background: var(--tone-updates);
+}
+/* Si dos secciones contiguas comparten tono, una línea fina las separa */
+.tone-featured + .tone-updates {
+  border-top: 1px solid var(--border);
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0 0 0.5rem;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: var(--text);
+  max-width: 60ch;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  border: 2px solid var(--white);
+  background: var(--white);
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: none;
+  min-height: 44px;
+  transition:
+    background var(--dur) var(--ease-out),
+    color var(--dur) var(--ease-out),
+    transform var(--dur) var(--ease-out);
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: scale(0.97);
+  transition-duration: var(--dur-fast);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: currentColor;
+}
+.btn--ghost:hover {
+  background: var(--white);
+  color: var(--navy);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Para sprites pequeños que se AMPLÍAN. No usar en capturas grandes que se reducen:
+   al reducir con "pixelated" el texto fino se ve dentado. */
+.pixel {
+  image-rendering: pixelated;
+}
+
+.page-header {
+  padding-block: clamp(40px, 7vw, 80px) clamp(24px, 4vw, 40px);
+}
+
+/* Contenido de las entradas del devlog (Markdown) */
+.prose {
+  max-width: 68ch;
+}
+.prose h2 {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+}
+.prose h3 {
+  margin-top: 1.5rem;
+}
+.prose img {
+  border-radius: var(--radius);
+  margin: 1.5rem 0;
+}
+.prose blockquote {
+  margin: 1.5rem 0;
+  padding: 0.5rem 1.25rem;
+  border-inline-start: 4px solid var(--border-strong);
+  color: var(--text);
+}
+.prose code {
+  background: var(--surface);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}

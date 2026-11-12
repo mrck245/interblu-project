@@ -1,322 +1,195 @@
-<template>
-  <header class="encabezado">
-    <img :src="logo" alt="Interblü logo" class="logo" />
-
-    <!-- Botón hamburguesa -->
-    <button class="hamburger" @click="isOpen = !isOpen">
-      ☰
-    </button>
-
-    <!-- NAV normal + responsive -->
-    <nav :class="['navbar', { active: isOpen }]">
-      <ul>
-        <li><button @click="goHome">Inicio</button></li>
-        <li><button @click="goServices">Servicios</button></li>
-        <li><button @click="goProducts">Productos</button></li>
-        <li><button @click="goAbout">Acerca De</button></li>
-        <li><button @click="goContacts">Contactos</button></li>
-        <li><button @click="goLogin">Iniciar Sesión</button></li>
-      </ul>
-    </nav>
-  </header>
-</template>
-
-
 <script setup>
-import { ref } from 'vue'
-import logo from '@/assets/Sources/interblu-logo.png'
-import { useRouter } from 'vue-router'
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import LogoMark from './LogoMark.vue'
+import LanguageSwitcher from './LanguageSwitcher.vue'
+import { t, localePath, stripLocale } from '@/i18n'
 
-const router = useRouter()
-const isOpen = ref(false)
+const links = [
+  { to: '/', key: 'nav.home' },
+  { to: '/juegos', key: 'nav.games' },
+  { to: '/devlog', key: 'nav.devlog' },
+  { to: '/nosotros', key: 'nav.about' },
+  { to: '/contacto', key: 'nav.contact' },
+]
 
-function goHome() {
-  router.push('/')
-  isOpen.value = false
+const open = ref(false)
+const route = useRoute()
+watch(
+  () => route.fullPath,
+  () => (open.value = false),
+)
+
+// "Juegos" sigue marcado dentro de /juegos/tulips, "Devlog" dentro de cada entrada, etc.
+// Se compara sin el prefijo de idioma (/en/juegos → /juegos).
+function isActive(to) {
+  const path = stripLocale(route.path)
+  return to === '/' ? path === '/' : path === to || path.startsWith(`${to}/`)
 }
 
-function goServices() {
-  router.push('/services')
-  isOpen.value = false
-}
-
-function goProducts() {
-  router.push('/products')
-  isOpen.value = false
-}
-
-function goAbout() {
-  router.push('/about')
-  isOpen.value = false
-}
-
-function goContacts() {
-  router.push('/contacts')
-  isOpen.value = false
-}
-
-function goLogin() {
-  router.push('/login')
-  isOpen.value = false
+// Escape cierra el menú móvil y devuelve el foco al botón que lo abrió
+const toggle = ref(null)
+function closeMenu() {
+  if (!open.value) return
+  open.value = false
+  toggle.value?.focus()
 }
 </script>
 
+<template>
+  <header class="header" @keydown.esc="closeMenu">
+    <div class="container header__inner">
+      <RouterLink :to="localePath('/')" class="header__brand" :aria-label="t('nav.homeLink')">
+        <LogoMark class="header__logo" />
+      </RouterLink>
+
+      <nav id="main-nav" class="nav" :class="{ 'nav--open': open }" :aria-label="t('nav.primary')">
+        <RouterLink
+          v-for="link in links"
+          :key="link.to"
+          :to="localePath(link.to)"
+          class="nav__link"
+          :class="{ 'is-active': isActive(link.to) }"
+          :aria-current="isActive(link.to) ? 'page' : undefined"
+        >
+          {{ t(link.key) }}
+        </RouterLink>
+      </nav>
+
+      <div class="header__tools">
+        <LanguageSwitcher />
+        <button
+          ref="toggle"
+          class="header__toggle"
+          :aria-expanded="open"
+          aria-controls="main-nav"
+          @click="open = !open"
+        >
+          <span class="sr-only">{{ t('nav.menu') }}</span>
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</template>
 
 <style scoped>
-@font-face {
-  font-family: 'Marcellus';
-  src: url('@/assets/Sources/Marcellus/Marcellus-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  background: rgb(10 127 166 / 0.95); /* --bg con transparencia para el desenfoque */
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
 }
 
-.encabezado {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 13vh;
-  background: #003249;
-  z-index: 1000;
+.header__inner {
+  height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 0.4vh;
+  gap: 1rem;
 }
 
-.logo {
-  height: 80%; /* Ajusta según el tamaño que quieras */
-  margin-top: 0vh;
-  margin-left: 4vh;
-}
-
-.navbar {
-  position: absolute;
-  top: 13vh;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-}
-
-.navbar ul {
-  list-style: none;
+.header__brand {
   display: flex;
-  margin: 0;
-  padding: 0;
 }
 
-.navbar li {
-  flex: 1;
+.header__logo {
+  height: 80px;
 }
 
-.navbar button {
-  font-family: 'Marcellus', serif;
-  font-size: 2.2vh;
-  width: 100%;
-  height: 5vh;
-  background-color: #81c4da;
-  color: #003249;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s ease;
+.nav {
+  display: flex;
+  gap: 0.25rem;
+  margin-inline-start: auto;
 }
 
-.navbar button:hover {
-  background-color: #c9eefa;
-  color: #013f5c;
+.header__tools {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.hamburger {
+.nav__link {
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  transition: background var(--dur) var(--ease-out);
+}
+.nav__link:hover {
+  background: var(--surface);
+}
+.nav__link.is-active {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.header__toggle {
   display: none;
-  font-size: 3vh;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  margin-left: auto;
-}
-
-@media (max-width: 912px) {
-
-
-
-  .encabezado {
-
-    height: 20vh;
-
-    display: flex;
-
-    flex-direction: column; /* Apila logo y nav (aunque nav está oculto) */
-
-    align-items: center;    /* Centra el logo horizontalmente */
-
-    justify-content: center; /* Centra el logo verticalmente */
-
-  }
-
-
-
-  .logo {
-
-    height: 70%;
-
-    margin-top: 0vh;
-
-    margin-left: 0vh;
-
-  }
-
-  .hamburger {
-
-    display: block;
-
-    position: absolute;
-
-    right: 2vh;
-
-    top: 1vh;
-
-  }
-
-
-
-.navbar {
-  position: fixed;
-  top: 20vh;
-  left: 0;
-  width: 100%;
-  background: #003f5c;
-  opacity: 0;
-  transform: translateY(-20px); /* se esconde hacia arriba */
-  pointer-events: none;        /* impide clics mientras está oculto */
-  transition: opacity 0.1s ease, transform 0.1s ease;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
   padding: 0;
+  border-radius: 8px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.bar {
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
 }
 
-
-
-.navbar.active {
-  opacity: 1;
-  transform: translateY(0);   /* baja suavemente */
-  pointer-events: auto;
-}
-
-
-
-  /* Vertical */
-
-  .navbar ul {
-
-    display:list-item;
-
-    flex-direction: column;
-
-    align-items: stretch;      /* ← Centrar botones */
-
-    justify-content: center;
-
-    width: 100%;
-
-    padding: 0;
-
-    margin: 0;
-
-  }
-
-
-
-  .navbar button {
-
-   width: 100%;
-
-   height: 12vh;
-
-    font-size: 3vh;
-
-    border-radius: 0px; /* opcional: hace que parezcan menú real */
-
-  }
-
-
-
-  .navbar button:hover {
-
-     background-color: #c9eefa;
-
-      color: #013f5c;
-
-  }
-
-
-
-  /* Header más alto por mobile */
-
-  .encabezado {
-
-    height: 20vh;
-
-  }
-
-}
-
-@media (min-width: 913px) and (max-width: 1024px) {
-  .logo {
-    display: block;    /* ← agregar */
-    height: 65%;
-    margin-top: 0vh;
-    margin-left: 3vh;
-}
-  
-.navbar {
-    /* 🛑 CAMBIO CLAVE: Quita la posición absoluta y el 'top' que lo desplaza */
-    position: relative; /* O relative, para que siga el flujo */
-    top: initial;
-    left: initial;
-    width: 100%;
-    /* ... */
-  }
-
-
-
-  .navbar ul {
-    /* Mantiene los botones horizontales pero se asegura de que el padre sea ancho */
-    justify-content: center; 
-  }
-
-
-  .navbar button {
-
-   width: 100%;
-   height: 5vh;
-    font-size: 1.6vh;
-    font-display:fallback;
-  }
-
-  .navbar button:hover {
-     background-color: #c9eefa;
-      color: #013f5c;
-  }
-
-  /* Header más alto por mobile */
-  .encabezado {
-    height: 20vh; /* Se mantiene alto */
-    flex-direction: column; /* Apila logo y nav */
-    justify-content:center; /* Centra el bloque apilado */
-  }
-
-.hero-wrapper {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  width: 100%;
-  background: #003249;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
   overflow: hidden;
-  margin-top: 90px;
-  height: calc(100vh - 80px);
+  clip: rect(0 0 0 0);
 }
 
+/* Con 5 enlaces + selector de idioma, en algunos idiomas los textos son largos:
+   el menú se pliega antes de que falte espacio. */
+@media (max-width: 980px) {
+  .header__logo {
+    height: 64px;
+  }
+  .header__toggle {
+    display: flex;
+  }
+  .header__tools {
+    margin-inline-start: auto;
+  }
 
+  .nav {
+    position: absolute;
+    top: var(--header-h);
+    inset-inline: 0;
+    flex-direction: column;
+    padding: 0.75rem var(--gutter) 1.25rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 12px 24px rgb(0 20 30 / 0.3);
+    display: none;
+  }
+  .nav--open {
+    display: flex;
+  }
+  .nav__link {
+    padding: 0.8rem 1rem;
+    font-size: 1.15rem;
+  }
 }
-
-
 </style>

@@ -1,0 +1,121 @@
+// 简体中文（普通话）
+export default {
+  meta: {
+    description:
+      'Interblü 是一家位于巴拿马布加巴的独立游戏工作室。在这里了解我们的项目和开发日志。',
+    home: '独立游戏工作室',
+    games: '项目',
+    devlog: '开发日志',
+    about: '关于我们',
+    contact: '联系我们',
+    notFound: '页面未找到',
+  },
+  nav: {
+    home: '首页',
+    games: '游戏',
+    devlog: '开发日志',
+    about: '关于我们',
+    contact: '联系我们',
+    menu: '菜单',
+    primary: '主导航',
+    homeLink: 'Interblü，返回首页',
+    skip: '跳至正文',
+    language: '语言',
+  },
+  footer: {
+    tagline: '独立游戏工作室',
+    location: '巴拿马布加巴',
+    rights: '版权所有。',
+  },
+  common: {
+    readMore: '阅读全文',
+    release: '发售',
+    status: '状态',
+    statuses: {
+      inDevelopment: '开发中',
+      prototype: '原型阶段',
+    },
+  },
+  home: {
+    eyebrow: '独立游戏工作室',
+    title: '我们开发具有独特个性的电子游戏。',
+    lead: 'Interblü 是一家总部位于巴拿马布加巴的独立工作室。我们在此发布项目信息及其开发记录。',
+    ctaProjects: '查看项目',
+    ctaDevlog: '查看开发日志',
+    featuredEyebrow: '主要项目',
+    viewSheet: '查看 {title} 详情',
+    updatesEyebrow: '开发日志',
+    updatesTitle: '最新动态',
+    viewAll: '查看全部',
+    catalogEyebrow: '作品目录',
+    otherTitle: '其他项目',
+  },
+  games: {
+    eyebrow: '作品目录',
+    title: '项目',
+    lead: 'Interblü 正在开发及处于原型阶段的游戏。',
+  },
+  game: {
+    back: '全部项目',
+    unavailableBefore: '本游戏尚未推出。最新消息将发布在',
+    unavailableLink: '开发日志',
+    unavailableAfter: '中。',
+    updates: '最新动态',
+  },
+  devlog: {
+    eyebrow: '开发记录',
+    title: '开发日志',
+    lead: '关于我们项目开发的最新动态与笔记。',
+    empty: '暂无已发布的文章。',
+    back: '开发日志',
+    onlySpanish: '本文仅提供西班牙语版本。',
+  },
+  about: {
+    eyebrow: '关于我们',
+    title: '关于 Interblü',
+    paragraphs: [
+      'Interblü 是一家独立游戏工作室，于 2025 年 10 月在巴拿马布加巴成立。工作室最初是一个软件开发品牌，自 2026 年起专注于电子游戏开发。',
+      '我们的目标是打造具有鲜明艺术风格和精心设计体验的游戏。我们在开发日志中公开记录开发过程，方便玩家和合作伙伴了解每个项目的进展。',
+    ],
+    teamTitle: '团队',
+    roles: {
+      programming: '程序与游戏设计',
+      art: '美术与平面设计',
+    },
+  },
+  contact: {
+    eyebrow: '联系我们',
+    title: '联系方式',
+    lead: '如有咨询、合作提议或对我们游戏的意见，欢迎通过电子邮件或社交媒体与我们联系。',
+    email: '电子邮件',
+    social: '社交媒体',
+  },
+  notFound: {
+    title: '页面未找到',
+    lead: '该地址不存在，或页面已被移动。',
+    cta: '返回首页',
+  },
+  gamesData: {
+    tulips: {
+      release: '2027 年 1 月（预计）',
+      summary: '俯视角像素风冒险游戏。支持 60 种语言，预计于 2027 年 1 月发售。',
+      description: [
+        'TULIPS 是 Interblü 目前正在开发的主要项目：一款拥有手绘场景的俯视角像素风冒险游戏。',
+        '本游戏支持 60 种语言。我们目前正在评估加入新的游戏模式。',
+      ],
+      features: ['手绘像素美术', '支持 60 种语言', 'Free-for-all 模式'],
+      screenshots: [
+        'TULIPS 标题画面',
+        '角色站在草地与紫色郁金香之间的小路上',
+        '同一条小路，采用淡奶油色调的配色',
+      ],
+    },
+    'foreign-waltz': {
+      release: '',
+      summary: '处于原型阶段的项目。',
+      description: ['Foreign Waltz 目前处于原型阶段。我们会在开发日志中发布进展。'],
+      features: [],
+      screenshots: ['Foreign Waltz 标志', '有房屋、树木和警察局的小镇地图', '带环岛的十字路口'],
+    },
+  },
+}

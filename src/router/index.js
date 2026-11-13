@@ -1,7 +1,9 @@
-import { createRouter, createWebHistory, RouterView } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import { PREFIXED_CODES, DEFAULT_LOCALE, setLocale, t } from '@/i18n'
 import { loadPosts } from '@/lib/devlog'
+import { waitForPageSwap } from '@/lib/pageTransition'
+import PageTransition from '@/components/PageTransition.vue'
 
 // Las mismas páginas para todos los idiomas. El español no lleva prefijo (/juegos)
 // y los demás sí (/en/juegos, /ar/juegos...).
@@ -46,11 +48,13 @@ const router = createRouter({
   routes: [
     {
       path: `/:locale(${PREFIXED_CODES.join('|')})?`,
-      component: RouterView,
+      component: PageTransition,
       children: pages,
     },
   ],
-  scrollBehavior(to, from, saved) {
+  async scrollBehavior(to, from, saved) {
+    // Al cambiar de página, esperar a que termine el fundido de salida
+    if (from.matched.length && to.path !== from.path) await waitForPageSwap()
     return saved ?? { top: 0 }
   },
 })

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
-import { PREFIXED_CODES, DEFAULT_LOCALE, setLocale, t } from '@/i18n'
+import { PREFIXED_CODES, DEFAULT_LOCALE, loadLocale, activateLocale, t } from '@/i18n'
 import { loadPosts } from '@/lib/devlog'
 import { waitForPageSwap } from '@/lib/pageTransition'
 import PageTransition from '@/components/PageTransition.vue'
@@ -59,14 +59,33 @@ const router = createRouter({
   },
 })
 
-// Antes de mostrar una página, cargar los textos y las entradas del devlog de su idioma
-router.beforeEach(async (to) => {
-  const code = to.params.locale || DEFAULT_LOCALE
-  await Promise.all([setLocale(code), loadPosts(code)])
+// Antes de mostrar una página, descargar los textos y las entradas del devlog de su idioma.
+// El idioma no se ACTIVA aquí: si se activara ya, la página que se va cambiaría de
+// idioma antes de desvanecerse. Lo activa PageTransition justo cuando la página
+// vieja termina de salir (o aquí mismo en la primera carga, que no tiene transición).
+router.beforeEach(async (to, from) => {
+  const code = localeOf(to)
+  await Promise.all([loadLocale(code), loadPosts(code)])
+  if (!from.matched.length) applyRoute(to)
 })
 
-router.afterEach((to) => {
-  if (to.meta.titleKey) document.title = `${t(to.meta.titleKey)} · ${t('brand')}`
+const localeOf = (route) => route.params.locale || DEFAULT_LOCALE
+
+/** Activa el idioma de la ruta y pone el título de la pestaña. */
+export function applyRoute(route) {
+  activateLocale(localeOf(route))
+  if (route.meta.titleKey) document.title = `${t(route.meta.titleKey)} · ${t('brand')}`
+}
+
+// Tras la primera carga, descargar en segundo plano el resto de páginas para que
+// la navegación no tenga que esperar a la red.
+router.isReady().then(() => {
+  const idle = window.requestIdleCallback ?? ((fn) => setTimeout(fn, 1500))
+  idle(() => {
+    for (const page of pages) {
+      if (typeof page.component === 'function') page.component().catch(() => {})
+    }
+  })
 })
 
 export default router

@@ -9,7 +9,9 @@
 // Al elegir, lleva a la MISMA página en el idioma elegido.
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { LOCALES, locale, localePath, stripLocale, t } from '@/i18n'
+import { LOCALES, locale, localePath, stripLocale, t, loadLocale } from '@/i18n'
+import { loadPosts } from '@/lib/devlog'
+import { logoFor, preloadImage } from '@/lib/brand'
 
 // Si hubiera más de un selector en la página, cada uno necesita su propio id
 const props = defineProps({
@@ -34,8 +36,24 @@ const currentIndex = computed(() =>
 const current = computed(() => LOCALES[currentIndex.value])
 const listId = computed(() => `${props.id}-list`)
 
-function focusOption(i) {
+// Al señalar un idioma (ratón o teclado) se empieza a descargar lo que necesita,
+// para que al elegirlo el cambio sea inmediato.
+const preloaded = new Set()
+function preload(code) {
+  if (preloaded.has(code)) return
+  preloaded.add(code)
+  Promise.all([loadLocale(code), loadPosts(code), preloadImage(logoFor(code))]).catch(() =>
+    preloaded.delete(code),
+  )
+}
+
+function highlight(i) {
   active.value = i
+  preload(LOCALES[i].code)
+}
+
+function focusOption(i) {
+  highlight(i)
   list.value?.children[i]?.focus()
 }
 
@@ -149,7 +167,7 @@ onBeforeUnmount(() => document.removeEventListener('click', onDocumentClick))
         :aria-selected="l.code === locale"
         :lang="l.htmlLang"
         @click="choose(l.code)"
-        @mousemove="active = i"
+        @mousemove="highlight(i)"
       >
         {{ l.name }}
       </li>

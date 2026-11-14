@@ -7,7 +7,7 @@ export function waitForPageSwap() {
   pending?.()
   return new Promise((resolve) => {
     // Por si la transición no llega a ocurrir, no bloquear el scroll
-    const timer = setTimeout(done, 600)
+    const timer = setTimeout(done, 1200)
     function done() {
       clearTimeout(timer)
       if (pending === done) pending = null

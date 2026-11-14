@@ -35,12 +35,17 @@ const messages = { es }
 /** Idioma activo (reactivo). Lo cambia el router al navegar. */
 export const locale = ref(DEFAULT_LOCALE)
 
-/** Carga (si hace falta) y activa un idioma. También actualiza <html lang/dir>. */
-export async function setLocale(code) {
-  if (!LOCALE_CODES.includes(code)) code = DEFAULT_LOCALE
-  if (!messages[code]) {
-    messages[code] = (await loaders[`./locales/${code}.js`]()).default
-  }
+/** Descarga los textos de un idioma sin activarlo (para tenerlos listos antes de usarlos). */
+export async function loadLocale(code) {
+  if (!LOCALE_CODES.includes(code)) return
+  loadLocaleFonts(code) // las fuentes solo se aplican a ese idioma: se pueden ir bajando ya
+  if (!messages[code]) messages[code] = (await loaders[`./locales/${code}.js`]()).default
+}
+
+/** Activa un idioma ya descargado (síncrono, para hacerlo en el momento justo).
+ * También actualiza <html lang/dir>. */
+export function activateLocale(code) {
+  if (!LOCALE_CODES.includes(code) || !messages[code]) code = DEFAULT_LOCALE
   locale.value = code
   const info = localeInfo(code)
   document.documentElement.lang = info.htmlLang

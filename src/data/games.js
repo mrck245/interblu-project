@@ -25,6 +25,8 @@ export const games = [
     featured: true,
     cover: tulipsMeadow,
     screenshots: [tulipsTitle, tulipsMeadow, tulipsPale],
+    // Demo jugable: exportación web de Godot copiada tal cual en public/demos/<slug>/. Opcional.
+    demo: `${import.meta.env.BASE_URL}demos/tulips/Tulips.html`,
     // Enlaces para jugar/comprar. `labelKey` (texto del botón) y `noteKey` (aclaración
     // opcional debajo) son claves de i18n.
     links: [

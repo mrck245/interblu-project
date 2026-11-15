@@ -55,6 +55,7 @@
      · sobre negro 5.8:1 · sobre tarjeta 5.1:1 · sobre tarjeta en hover 4.5:1 */
   --tulips-purple-deep: #9070f2;
   --tulips-black: #000000;
+  --media-bg: #000000; /* fondo de capturas y demos mientras cargan */
   --tulips-surface: #141414; /* tarjetas dentro del tema */
   --tulips-surface-hover: #1f1f1f;
 

@@ -60,6 +60,11 @@ export default {
   game: {
     back: '全部项目',
     playBeta: '在 itch.io 免费试玩测试版',
+    demoTitle: '可玩试玩版',
+    demoPlay: '开始试玩',
+    demoSize: '约 70 MB 下载：仅在点击按钮后加载。',
+    demoFullscreen: '全屏',
+    demoFrame: '{title} 试玩版',
     unavailableBefore: '本游戏尚未推出。最新消息将发布在',
     unavailableLink: '开发日志',
     unavailableAfter: '中。',

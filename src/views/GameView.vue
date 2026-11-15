@@ -2,6 +2,7 @@
 import { computed, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import PostCard from '@/components/PostCard.vue'
+import GameDemo from '@/components/GameDemo.vue'
 import NotFoundView from './NotFoundView.vue'
 import { getGame, localizeGame } from '@/data/games'
 import { posts } from '@/lib/devlog'
@@ -52,6 +53,7 @@ watchEffect(() => {
             </ul>
 
             <div class="links">
+              <a v-if="game.demo" href="#demo" class="btn">{{ t('game.demoPlay') }}</a>
               <a
                 v-for="link in game.links"
                 :key="link.url"
@@ -85,6 +87,11 @@ watchEffect(() => {
             </a>
           </div>
         </div>
+
+        <section v-if="game.demo" id="demo" class="demo-section" aria-labelledby="demo-title">
+          <h2 id="demo-title">{{ t('game.demoTitle') }}</h2>
+          <GameDemo :src="game.demo" :poster="game.cover" :title="game.title" />
+        </section>
 
         <section v-if="relatedPosts.length" class="related">
           <h2>{{ t('game.updates') }}</h2>
@@ -186,9 +193,10 @@ watchEffect(() => {
   width: 100%;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background: #000;
+  background: var(--media-bg);
 }
 
+.demo-section,
 .related {
   margin-top: 4rem;
 }

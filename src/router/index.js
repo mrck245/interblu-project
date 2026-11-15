@@ -55,7 +55,14 @@ const router = createRouter({
   async scrollBehavior(to, from, saved) {
     // Al cambiar de página, esperar a que termine el fundido de salida
     if (from.matched.length && to.path !== from.path) await waitForPageSwap()
-    return saved ?? { top: 0 }
+    if (saved) return saved
+    // Enlaces a una sección (#demo): bajar hasta ella sin quedar tapada por la cabecera fija
+    if (to.hash) {
+      const header = document.querySelector('.header')?.offsetHeight ?? 0
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      return { el: to.hash, top: header + 16, behavior: reduced ? 'auto' : 'smooth' }
+    }
+    return { top: 0 }
   },
 })
 

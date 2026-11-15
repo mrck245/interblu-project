@@ -60,6 +60,11 @@ export default {
   game: {
     back: 'جميع المشاريع',
     playBeta: 'العب النسخة التجريبية مجانًا على itch.io',
+    demoTitle: 'نسخة تجريبية قابلة للعب',
+    demoPlay: 'العب النسخة التجريبية',
+    demoSize: 'تنزيل بحجم 70 ميغابايت تقريبًا: لا يتم تحميلها إلا عند الضغط على الزر.',
+    demoFullscreen: 'ملء الشاشة',
+    demoFrame: 'النسخة التجريبية من {title}',
     unavailableBefore: 'هذه اللعبة غير متاحة بعد. سيتم نشر المستجدات في',
     unavailableLink: 'سجل التطوير',
     unavailableAfter: '.',

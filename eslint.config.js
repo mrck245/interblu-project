@@ -10,7 +10,8 @@ export default defineConfig([
     files: ['**/*.{js,mjs,jsx,vue}'],
   },
 
-  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
+  // public/demos: exportaciones web de Godot (código generado, no se toca)
+  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**', 'public/demos/**']),
 
   {
     languageOptions: {

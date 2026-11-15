@@ -1,1 +1,4 @@
 * text=auto eol=lf
+# Exportaciones web de Godot (public/demos)
+*.wasm binary
+*.pck binary

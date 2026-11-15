@@ -61,6 +61,11 @@ export default {
   game: {
     back: '전체 프로젝트',
     playBeta: 'itch.io에서 무료 베타 플레이',
+    demoTitle: '플레이 가능한 데모',
+    demoPlay: '데모 플레이',
+    demoSize: '약 70MB를 내려받습니다. 버튼을 누를 때만 불러옵니다.',
+    demoFullscreen: '전체 화면',
+    demoFrame: '{title} 데모',
     unavailableBefore: '이 게임은 아직 출시되지 않았습니다. 새로운 소식은',
     unavailableLink: '개발 일지',
     unavailableAfter: '에서 알려 드립니다.',

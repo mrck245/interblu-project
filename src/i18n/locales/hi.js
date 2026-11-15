@@ -61,6 +61,11 @@ export default {
   game: {
     back: 'सभी परियोजनाएँ',
     playBeta: 'itch.io पर मुफ़्त बीटा खेलें',
+    demoTitle: 'खेलने योग्य डेमो',
+    demoPlay: 'डेमो खेलें',
+    demoSize: 'लगभग 70 MB का डाउनलोड: यह बटन दबाने पर ही लोड होता है।',
+    demoFullscreen: 'फ़ुल स्क्रीन',
+    demoFrame: '{title} डेमो',
     unavailableBefore: 'यह गेम अभी उपलब्ध नहीं है। नई जानकारी',
     unavailableLink: 'डेवलॉग',
     unavailableAfter: ' में प्रकाशित की जाएगी।',

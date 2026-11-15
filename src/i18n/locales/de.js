@@ -61,6 +61,11 @@ export default {
   game: {
     back: 'Alle Projekte',
     playBeta: 'Kostenlose Beta auf itch.io spielen',
+    demoTitle: 'Spielbare Demo',
+    demoPlay: 'Demo spielen',
+    demoSize: 'Etwa 70 MB Download: Die Demo wird erst geladen, wenn Sie auf die Schaltfläche klicken.',
+    demoFullscreen: 'Vollbild',
+    demoFrame: 'Demo von {title}',
     unavailableBefore: 'Dieses Spiel ist noch nicht verfügbar. Neuigkeiten werden im',
     unavailableLink: 'Devlog',
     unavailableAfter: ' veröffentlicht.',

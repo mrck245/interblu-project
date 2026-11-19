@@ -70,6 +70,9 @@ Los valores están en `src/assets/main.css` (tokens `--tone-*`), y las clases `.
 | Últimas actualizaciones | `--tone-updates` | `#78b9ce` (+45 % blanco) | **azul marino** 6.19:1 (el blanco no cumple) |
 | Otros proyectos | `--tone-projects` | `#07688a` (+30 % azul marino) | blanco 6.26:1 |
 
+Decisión del usuario (2026-11-19): el devlog (la lista y cada entrada) usa el mismo tono claro que "Últimas actualizaciones"
+(clase `.tone-updates` en toda la página): fondo `#78b9ce`, texto azul marino y tarjetas `--tone-updates-card`.
+
 El resto de páginas siguen con un único fondo turquesa.
 
 ## Tipografía

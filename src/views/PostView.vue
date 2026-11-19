@@ -18,28 +18,34 @@ watchEffect(() => {
 <template>
   <NotFoundView v-if="!post" />
 
-  <article v-else class="container post">
-    <RouterLink :to="localePath('/devlog')" class="back"
-      ><span class="arrow" aria-hidden="true">←</span> {{ t('devlog.back') }}</RouterLink
-    >
-    <header class="post__header">
-      <time v-if="post.date" :datetime="post.date.toISOString().slice(0, 10)">{{
-        post.dateLabel
-      }}</time>
-      <h1 :lang="localeInfo(post.locale).htmlLang">{{ post.title }}</h1>
-      <RouterLink v-if="game" :to="localePath(`/juegos/${game.slug}`)" class="badge">{{
-        game.title
-      }}</RouterLink>
-      <p v-if="post.isFallback" class="fallback">{{ t('devlog.onlySpanish') }}</p>
-    </header>
+  <div v-else class="tone-updates tono-pagina">
+    <!-- Tono claro de "Últimas actualizaciones" del inicio (ver MASTER.md, Superficies) -->
+    <article class="container post">
+      <RouterLink :to="localePath('/devlog')" class="back"
+        ><span class="arrow" aria-hidden="true">←</span> {{ t('devlog.back') }}</RouterLink
+      >
+      <header class="post__header">
+        <time v-if="post.date" :datetime="post.date.toISOString().slice(0, 10)">{{
+          post.dateLabel
+        }}</time>
+        <h1 :lang="localeInfo(post.locale).htmlLang">{{ post.title }}</h1>
+        <RouterLink v-if="game" :to="localePath(`/juegos/${game.slug}`)" class="badge">{{
+          game.title
+        }}</RouterLink>
+        <p v-if="post.isFallback" class="fallback">{{ t('devlog.onlySpanish') }}</p>
+      </header>
 
-    <!-- El HTML viene de nuestros propios archivos Markdown en src/content/devlog -->
-    <!-- eslint-disable-next-line vue/no-v-html -->
-    <div class="prose" :lang="localeInfo(post.locale).htmlLang" v-html="post.html"></div>
-  </article>
+      <!-- El HTML viene de nuestros propios archivos Markdown en src/content/devlog -->
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <div class="prose" :lang="localeInfo(post.locale).htmlLang" v-html="post.html"></div>
+    </article>
+  </div>
 </template>
 
 <style scoped>
+.tono-pagina {
+  flex: 1;
+}
 .post {
   padding-top: clamp(32px, 6vw, 64px);
   padding-bottom: 96px;

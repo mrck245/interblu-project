@@ -107,10 +107,10 @@ export default {
   gamesData: {
     tulips: {
       localTitle: '',
-      release: 'Janeiro de 2027 (estimado)',
+      release: 'Fevereiro de 2027 (estimado)',
       betaNote: 'O beta inclui 41 dos 60 idiomas.',
       summary:
-        'Aventura em pixel art com visão de cima. Disponível em 60 idiomas, com lançamento estimado para janeiro de 2027.',
+        'Aventura em pixel art com visão de cima. Disponível em 60 idiomas, com lançamento estimado para fevereiro de 2027.',
       description: [
         'TULIPS é o projeto principal da Interblü, atualmente em desenvolvimento: uma aventura em pixel art com visão de cima e cenários desenhados à mão.',
         'O jogo está disponível em 60 idiomas. No momento, estamos avaliando a inclusão de novos modos de jogo.',

@@ -75,6 +75,13 @@ src/
 
 ## Despliegue
 
-Es un sitio estático: sube la carpeta `dist/` a Netlify, Vercel, Cloudflare Pages o similar.
-Como usa rutas sin `#`, el servidor debe responder `index.html` a cualquier ruta.
-`public/_redirects` ya lo configura para Netlify y Cloudflare Pages.
+La web se publica sola en **GitHub Pages** con cada push a `main`
+(`.github/workflows/pages.yml`): https://mrck245.github.io/interblu-project/
+
+- Se compila con `BASE_PATH=/interblu-project/` (ver `vite.config.js`); sin esa variable la base es `/`.
+- Como usa rutas sin `#`, el flujo copia `index.html` como `404.html` para que cualquier ruta cargue la web.
+- Se eligió GitHub Pages porque admite archivos de hasta 100 MB: la demo web de TULIPS
+  (`public/demos/tulips/Tulips.wasm`, ~39 MB) supera el límite de 25 MiB de Cloudflare.
+
+En otro alojamiento basta con subir `dist/` y responder `index.html` a cualquier ruta
+(`public/_redirects` lo hace en Netlify).

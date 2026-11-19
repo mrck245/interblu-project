@@ -60,7 +60,7 @@ export default {
   },
   game: {
     back: 'All projects',
-    playBeta: 'Play the free beta on itch.io',
+    downloadDemo: 'Download the free demo on itch.io',
     demoTitle: 'Playable demo',
     demoPlay: 'Play the demo',
     demoSize: 'About a 70 MB download: it only loads when you press the button.',
@@ -108,7 +108,7 @@ export default {
     tulips: {
       localTitle: '',
       release: 'February 2027 (estimated)',
-      betaNote: 'The beta includes 41 of the 60 languages.',
+      demoNote: 'For Windows. Includes all 60 languages.',
       summary:
         'Top-down pixel art adventure. Available in 60 languages, with an estimated release in February 2027.',
       description: [

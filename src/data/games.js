@@ -31,8 +31,8 @@ export const games = [
     // opcional debajo) son claves de i18n.
     links: [
       {
-        labelKey: 'game.playBeta',
-        noteKey: 'gamesData.tulips.betaNote',
+        labelKey: 'game.downloadDemo',
+        noteKey: 'gamesData.tulips.demoNote',
         url: 'https://interblu.itch.io/tulips',
       },
     ],

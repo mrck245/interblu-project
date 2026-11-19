@@ -60,7 +60,7 @@ export default {
   },
   game: {
     back: 'Alle Projekte',
-    playBeta: 'Kostenlose Beta auf itch.io spielen',
+    downloadDemo: 'Kostenlose Demo auf itch.io herunterladen',
     demoTitle: 'Spielbare Demo',
     demoPlay: 'Demo spielen',
     demoSize: 'Etwa 70 MB Download: Die Demo wird erst geladen, wenn Sie auf die Schaltfläche klicken.',
@@ -108,7 +108,7 @@ export default {
     tulips: {
       localTitle: '',
       release: 'Februar 2027 (voraussichtlich)',
-      betaNote: 'Die Beta enthält 41 der 60 Sprachen.',
+      demoNote: 'Für Windows. Mit allen 60 Sprachen.',
       summary:
         'Pixel-Art-Abenteuer in der Draufsicht. Verfügbar in 60 Sprachen, voraussichtliche Veröffentlichung im Februar 2027.',
       description: [

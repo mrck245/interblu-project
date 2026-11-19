@@ -60,7 +60,7 @@ export default {
   },
   game: {
     back: '전체 프로젝트',
-    playBeta: 'itch.io에서 무료 베타 플레이',
+    downloadDemo: 'itch.io에서 무료 데모 다운로드',
     demoTitle: '플레이 가능한 데모',
     demoPlay: '데모 플레이',
     demoSize: '약 70MB를 내려받습니다. 버튼을 누를 때만 불러옵니다.',
@@ -108,7 +108,7 @@ export default {
     tulips: {
       localTitle: '튤립',
       release: '2027년 2월 (예정)',
-      betaNote: '베타 버전은 60개 언어 중 41개를 지원합니다.',
+      demoNote: 'Windows용. 60개 언어를 모두 지원합니다.',
       summary: '탑다운 픽셀 아트 어드벤처. 60개 언어를 지원하며, 2027년 2월 출시 예정입니다.',
       description: [
         'TULIPS는 현재 개발 중인 인터블루의 대표 프로젝트로, 손으로 그린 배경이 돋보이는 탑다운 픽셀 아트 어드벤처입니다.',

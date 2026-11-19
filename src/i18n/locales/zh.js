@@ -59,7 +59,7 @@ export default {
   },
   game: {
     back: '全部项目',
-    playBeta: '在 itch.io 免费试玩测试版',
+    downloadDemo: '在 itch.io 免费下载试玩版',
     demoTitle: '可玩试玩版',
     demoPlay: '开始试玩',
     demoSize: '约 70 MB 下载：仅在点击按钮后加载。',
@@ -107,7 +107,7 @@ export default {
     tulips: {
       localTitle: '郁金香',
       release: '2027 年 2 月（预计）',
-      betaNote: '测试版支持 60 种语言中的 41 种。',
+      demoNote: '适用于 Windows，支持全部 60 种语言。',
       summary: '俯视角像素风冒险游戏。支持 60 种语言，预计于 2027 年 2 月发售。',
       description: [
         'TULIPS 是互花目前正在开发的主要项目：一款拥有手绘场景的俯视角像素风冒险游戏。',

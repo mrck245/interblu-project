@@ -60,7 +60,7 @@ export default {
   },
   game: {
     back: 'すべてのプロジェクト',
-    playBeta: 'itch.ioで無料ベータ版をプレイ',
+    downloadDemo: 'itch.ioで無料デモをダウンロード',
     demoTitle: 'プレイアブルデモ',
     demoPlay: 'デモをプレイ',
     demoSize: '約70MBのダウンロードです。ボタンを押したときにだけ読み込まれます。',
@@ -108,7 +108,7 @@ export default {
     tulips: {
       localTitle: 'チューリップ',
       release: '2027年2月（予定）',
-      betaNote: 'ベータ版は60言語のうち41言語に対応しています。',
+      demoNote: 'Windows版。60言語すべてに対応しています。',
       summary:
         '見下ろし型のピクセルアート・アドベンチャー。60言語に対応し、2027年2月の発売を予定しています。',
       description: [

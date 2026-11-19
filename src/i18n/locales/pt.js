@@ -60,7 +60,7 @@ export default {
   },
   game: {
     back: 'Todos os projetos',
-    playBeta: 'Jogar o beta grátis no itch.io',
+    downloadDemo: 'Baixar a demo grátis no itch.io',
     demoTitle: 'Demo jogável',
     demoPlay: 'Jogar a demo',
     demoSize: 'Download de cerca de 70 MB: só carrega quando você clica no botão.',
@@ -108,7 +108,7 @@ export default {
     tulips: {
       localTitle: '',
       release: 'Fevereiro de 2027 (estimado)',
-      betaNote: 'O beta inclui 41 dos 60 idiomas.',
+      demoNote: 'Para Windows. Inclui os 60 idiomas.',
       summary:
         'Aventura em pixel art com visão de cima. Disponível em 60 idiomas, com lançamento estimado para fevereiro de 2027.',
       description: [

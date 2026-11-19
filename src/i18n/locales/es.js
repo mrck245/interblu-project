@@ -62,7 +62,7 @@ export default {
   },
   game: {
     back: 'Todos los proyectos',
-    playBeta: 'Jugar la beta gratis en itch.io',
+    downloadDemo: 'Descargar la demo gratis en itch.io',
     demoTitle: 'Demo jugable',
     demoPlay: 'Jugar la demo',
     demoSize: 'Descarga de unos 70 MB: solo se carga al pulsar el botón.',
@@ -112,7 +112,7 @@ export default {
       // Nombre del juego en este idioma, como subtítulo bajo TULIPS (vacío = no se muestra)
       localTitle: '',
       release: 'Febrero de 2027 (estimado)',
-      betaNote: 'La beta incluye 41 de los 60 idiomas.',
+      demoNote: 'Para Windows. Incluye los 60 idiomas.',
       summary:
         'Aventura en pixel art con vista cenital. Disponible en 60 idiomas, con lanzamiento estimado para febrero de 2027.',
       description: [

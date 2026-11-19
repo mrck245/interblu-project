@@ -108,7 +108,7 @@ export default {
     tulips: {
       localTitle: '튤립',
       release: '2027년 2월 (예정)',
-      demoNote: 'Windows용. 60개 언어를 모두 지원합니다.',
+      demoNote: 'Windows, Linux, Android용. 60개 언어를 모두 지원합니다.',
       summary: '탑다운 픽셀 아트 어드벤처. 60개 언어를 지원하며, 2027년 2월 출시 예정입니다.',
       description: [
         'TULIPS는 현재 개발 중인 인터블루의 대표 프로젝트로, 손으로 그린 배경이 돋보이는 탑다운 픽셀 아트 어드벤처입니다.',

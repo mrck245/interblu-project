@@ -107,7 +107,7 @@ export default {
     tulips: {
       localTitle: '郁金香',
       release: '2027 年 2 月（预计）',
-      demoNote: '适用于 Windows，支持全部 60 种语言。',
+      demoNote: '适用于 Windows、Linux 和 Android，支持全部 60 种语言。',
       summary: '俯视角像素风冒险游戏。支持 60 种语言，预计于 2027 年 2 月发售。',
       description: [
         'TULIPS 是互花目前正在开发的主要项目：一款拥有手绘场景的俯视角像素风冒险游戏。',

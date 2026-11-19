@@ -108,7 +108,7 @@ export default {
     tulips: {
       localTitle: '',
       release: 'Februar 2027 (voraussichtlich)',
-      demoNote: 'Für Windows. Mit allen 60 Sprachen.',
+      demoNote: 'Für Windows, Linux und Android. Mit allen 60 Sprachen.',
       summary:
         'Pixel-Art-Abenteuer in der Draufsicht. Verfügbar in 60 Sprachen, voraussichtliche Veröffentlichung im Februar 2027.',
       description: [

@@ -112,7 +112,7 @@ export default {
       // Nombre del juego en este idioma, como subtítulo bajo TULIPS (vacío = no se muestra)
       localTitle: '',
       release: 'Febrero de 2027 (estimado)',
-      demoNote: 'Para Windows. Incluye los 60 idiomas.',
+      demoNote: 'Para Windows, Linux y Android. Incluye los 60 idiomas.',
       summary:
         'Aventura en pixel art con vista cenital. Disponible en 60 idiomas, con lanzamiento estimado para febrero de 2027.',
       description: [

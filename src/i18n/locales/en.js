@@ -108,7 +108,7 @@ export default {
     tulips: {
       localTitle: '',
       release: 'February 2027 (estimated)',
-      demoNote: 'For Windows. Includes all 60 languages.',
+      demoNote: 'For Windows, Linux and Android. Includes all 60 languages.',
       summary:
         'Top-down pixel art adventure. Available in 60 languages, with an estimated release in February 2027.',
       description: [

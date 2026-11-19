@@ -107,7 +107,7 @@ export default {
     tulips: {
       localTitle: 'توليب',
       release: 'فبراير 2027 (تقديري)',
-      demoNote: 'لنظام Windows. تتضمن اللغات الستين كلها.',
+      demoNote: 'لأنظمة Windows وLinux وAndroid. تتضمن اللغات الستين كلها.',
       summary:
         'مغامرة بفن البكسل من منظور علوي. متاحة بـ 60 لغة، ومن المتوقع إصدارها في فبراير 2027.',
       description: [

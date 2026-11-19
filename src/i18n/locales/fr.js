@@ -108,7 +108,7 @@ export default {
     tulips: {
       localTitle: '',
       release: 'Février 2027 (estimation)',
-      demoNote: 'Pour Windows. Comprend les 60 langues.',
+      demoNote: 'Pour Windows, Linux et Android. Comprend les 60 langues.',
       summary:
         'Aventure en pixel art en vue de dessus. Disponible en 60 langues, avec une sortie prévue en février 2027.',
       description: [

@@ -108,7 +108,7 @@ export default {
     tulips: {
       localTitle: 'チューリップ',
       release: '2027年2月（予定）',
-      demoNote: 'Windows版。60言語すべてに対応しています。',
+      demoNote: 'Windows・Linux・Android版。60言語すべてに対応しています。',
       summary:
         '見下ろし型のピクセルアート・アドベンチャー。60言語に対応し、2027年2月の発売を予定しています。',
       description: [

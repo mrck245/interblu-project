@@ -108,7 +108,7 @@ export default {
     tulips: {
       localTitle: 'ट्यूलिप्स',
       release: 'फ़रवरी 2027 (अनुमानित)',
-      demoNote: 'Windows के लिए। सभी 60 भाषाएँ शामिल हैं।',
+      demoNote: 'Windows, Linux और Android के लिए। सभी 60 भाषाएँ शामिल हैं।',
       summary:
         'ऊपर से दिखने वाला पिक्सेल आर्ट एडवेंचर। 60 भाषाओं में उपलब्ध, फ़रवरी 2027 में अनुमानित रिलीज़।',
       description: [

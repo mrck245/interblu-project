@@ -147,7 +147,7 @@ const organization = {
   name: 'Interblü',
   alternateName: ['Interblu', 'Interblu Games', 'Interblü Games'],
   url: `${SITE}/`,
-  logo: `${SITE}/interblu-favicon.png`,
+  logo: `${SITE}/icon-192.png`,
   sameAs: SOCIALS,
 }
 

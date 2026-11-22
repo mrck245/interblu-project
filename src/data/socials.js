@@ -4,7 +4,7 @@ import x from '@/assets/social/x.webp'
 import facebook from '@/assets/social/facebook.webp'
 import github from '@/assets/social/github.webp'
 
-export const contactEmail = 'contact.interblu@gmail.com'
+export const contactEmail = 'contact@interblugames.com'
 
 export const socials = [
   {

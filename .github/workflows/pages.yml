@@ -30,9 +30,8 @@ jobs:
       - run: npm run build
         env:
           BASE_PATH: /
-      # GitHub Pages no tiene reescrituras: las rutas de la web (/devlog/..., /en/...) se resuelven
-      # sirviendo la propia aplicación como página 404.
-      - run: cp dist/index.html dist/404.html
+      # El build también crea un HTML por página e idioma, sitemap.xml, robots.txt y 404.html
+      # (scripts/prerender.mjs): así cada ruta responde 200 y los buscadores la pueden indexar.
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

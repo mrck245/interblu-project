@@ -80,7 +80,10 @@ La web se publica sola en **GitHub Pages** con cada push a `main`
 (dominio en Squarespace; la dirección vieja mrck245.github.io/interblu-project redirige sola).
 
 - Con el dominio propio la web vive en la raíz: se compila con `BASE_PATH=/` (ver `vite.config.js`).
-- Como usa rutas sin `#`, el flujo copia `index.html` como `404.html` para que cualquier ruta cargue la web.
+- Después de `vite build`, `scripts/prerender.mjs` crea un `index.html` por página e idioma (título,
+  descripción, canonical, hreflang, Open Graph y JSON-LD), además de `sitemap.xml`, `robots.txt` y `404.html`.
+  Así cada ruta responde 200 y Google la puede indexar. Las URL llevan barra final (`/devlog/`).
+  Para otro dominio: `SITE_URL=https://... npm run build`.
 - Se eligió GitHub Pages porque admite archivos de hasta 100 MB: la demo web de TULIPS
   (`public/demos/tulips/Tulips.wasm`, ~39 MB) supera el límite de 25 MiB de Cloudflare.
 

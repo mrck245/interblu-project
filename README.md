@@ -76,9 +76,10 @@ src/
 ## Despliegue
 
 La web se publica sola en **GitHub Pages** con cada push a `main`
-(`.github/workflows/pages.yml`): https://mrck245.github.io/interblu-project/
+(`.github/workflows/pages.yml`): https://interblugames.com
+(dominio en Squarespace; la dirección vieja mrck245.github.io/interblu-project redirige sola).
 
-- Se compila con `BASE_PATH=/interblu-project/` (ver `vite.config.js`); sin esa variable la base es `/`.
+- Con el dominio propio la web vive en la raíz: se compila con `BASE_PATH=/` (ver `vite.config.js`).
 - Como usa rutas sin `#`, el flujo copia `index.html` como `404.html` para que cualquier ruta cargue la web.
 - Se eligió GitHub Pages porque admite archivos de hasta 100 MB: la demo web de TULIPS
   (`public/demos/tulips/Tulips.wasm`, ~39 MB) supera el límite de 25 MiB de Cloudflare.

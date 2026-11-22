@@ -1,5 +1,5 @@
 # Publica la web en GitHub Pages con cada push a main.
-# La web queda en https://mrck245.github.io/interblu-project/
+# La web queda en https://interblugames.com (dominio propio, comprado en Squarespace).
 name: Publicar en GitHub Pages
 
 on:
@@ -29,7 +29,7 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          BASE_PATH: /interblu-project/
+          BASE_PATH: /
       # GitHub Pages no tiene reescrituras: las rutas de la web (/devlog/..., /en/...) se resuelven
       # sirviendo la propia aplicación como página 404.
       - run: cp dist/index.html dist/404.html

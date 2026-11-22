@@ -7,8 +7,8 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Ruta base del sitio. GitHub Pages lo sirve en /interblu-project/ (ver .github/workflows/pages.yml);
-  // sin BASE_PATH (desarrollo local u otros alojamientos) es la raíz.
+  // Ruta base del sitio. con el dominio propio (interblugames.com) es la raíz;
+  // se puede cambiar con BASE_PATH (ver .github/workflows/pages.yml).
   base: process.env.BASE_PATH || '/',
   plugins: [
     vue(),
